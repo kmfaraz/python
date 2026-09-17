@@ -26,7 +26,9 @@ jobs:
       - name: Install dependencies
         run: pip install -r tennis_ml_lab/requirements.txt
       - name: Assemble analysis script
-        run: cat tennis_ml_lab/part1.txt tennis_ml_lab/part2.txt tennis_ml_lab/part3.txt > tennis_ml_lab/run_all.py
+        run: |
+          cat tennis_ml_lab/part1.txt tennis_ml_lab/part2.txt tennis_ml_lab/part3.txt > tennis_ml_lab/run_all.py
+          sed -i "s/pd.to_numeric(er.dropna().rank)/pd.to_numeric(er.dropna()['rank'])/" tennis_ml_lab/run_all.py
       - name: Syntax check
         run: python -m py_compile tennis_ml_lab/run_all.py
       - name: Run all 20 analyses
