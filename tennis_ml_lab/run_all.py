@@ -67,7 +67,7 @@ def cvpick(X,y,dates,makers):
   res.append((np.mean(v),label,mk))
  return min(res,key=lambda x:x[0]),pd.DataFrame([{'candidate':b,'cv_log_loss':a} for a,b,_ in res]).sort_values('cv_log_loss')
 def main():
- raw=pd.read_csv(U);raw['date']=pd.to_datetime(raw.tourney_date.astype(str),format='%Y%m%d',errors='coerce');raw=raw.dropna(subset=['date','winner_name','loser_name']);q=np.sort(raw.date.unique());cut0=pd.Timestamp(q[int(.8*len(q))-1]);kt=[]
+ raw=pd.concat([pd.read_csv(U),pd.read_csv(U.replace('2025.csv','2026.csv'))],ignore_index=True);raw['date']=pd.to_datetime(raw.tourney_date.astype(str),format='%Y%m%d',errors='coerce');raw=raw.dropna(subset=['date','winner_name','loser_name']);q=np.sort(raw.date.unique());cut0=pd.Timestamp(q[int(.8*len(q))-1]);kt=[]
  for k in [12,20,28,36,48,64]:
   d,*_=dyn(raw,k);z=raw[['date']].merge(d,left_index=True,right_on='row_id');p=np.clip(z[z.date<=cut0].pw,1e-6,1);kt.append((float(-np.log(p).mean()),k))
  bk=min(kt)[1];d,traj,elo,selo=dyn(raw,bk);x=orient(raw,d);tr,te,cut=split(x);train,test=x[tr],x[te];ytr,yte=train.y,test.y;sn=['rank_adv','points_adv','age_diff','ht_diff','best_of'];sc=['surface','level','round','hand'];rn=sn+['elo_adv','selo_adv','r10_adv','sr10_adv','rest_adv','h2h_adv','op_adv'];res={};models={};probs={}
@@ -138,5 +138,5 @@ def main():
  for sf,g in ss.groupby('surface'):spec+=rec(g.nlargest(10,'boost').assign(group=sf+' over'),10)+rec(g.nsmallest(10,'boost').assign(group=sf+' under'),10)
  res['19_surface_specialists']=spec
  mc=['rank_adv','points_adv','age_diff','ht_diff','lefty_adv','lefty_Hard','lefty_Clay','lefty_Grass'];mm=x.dropna(subset=mc[:4]);a,b,_=split(mm);M=Pipeline([('i',SimpleImputer(strategy='median')),('s',StandardScaler()),('m',LogisticRegression(C=.3,max_iter=3000))]).fit(mm.loc[a,mc],mm.loc[a,'y']);co=M.named_steps['m'].coef_[0];close=mm[mm.rank_adv.abs()<=20];hv=close[((close.p1_hand=='L')&(close.p2_hand=='R'))|((close.p1_hand=='R')&(close.p2_hand=='L'))].copy();hv['lw']=np.where(hv.p1_hand=='L',hv.y,1-hv.y);res['20_matchups']={'coefficients':[{'feature':f,'coef':v,'odds_ratio_1sd':math.exp(v)} for f,v in zip(mc,co)],'close_rank_lefty_vs_righty':rec(hv.groupby('surface').agg(matches=('lw','size'),lefty_win_rate=('lw','mean')).reset_index())}
- meta={'source_commit':C,'matches':len(raw),'train':int(tr.sum()),'test':int(te.sum()),'cutoff':str(cut.date()),'best_elo_K':bk};json.dump({'meta':meta,'results':res},open(O/'all_results.json','w'),indent=2,default=js);pd.DataFrame(show).to_csv(O/'model_showdown.csv',index=False);print(meta);print('done',len(res))
+ meta={'source_commit':C,'source_years':[2025,2026],'matches':len(raw),'train':int(tr.sum()),'test':int(te.sum()),'cutoff':str(cut.date()),'best_elo_K':bk};json.dump({'meta':meta,'results':res},open(O/'all_results.json','w'),indent=2,default=js);pd.DataFrame(show).to_csv(O/'model_showdown.csv',index=False);print(meta);print('done',len(res))
 if __name__=='__main__':main()
