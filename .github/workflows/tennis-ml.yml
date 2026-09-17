@@ -28,11 +28,16 @@ jobs:
       - name: Assemble analysis script
         run: |
           cat tennis_ml_lab/part1.txt tennis_ml_lab/part2.txt tennis_ml_lab/part3.txt > tennis_ml_lab/run_all.py
+          # Use both pinned 2025 and 2026 ATP match files for every analysis.
+          sed -i "s@raw=pd.read_csv(U);@raw=pd.concat([pd.read_csv(U),pd.read_csv(U.replace('2025.csv','2026.csv'))],ignore_index=True);@" tennis_ml_lab/run_all.py
+          # Preserve the two row-access bug fixes discovered in the first full run.
           sed -i "s/pd.to_numeric(er.dropna().rank)/pd.to_numeric(er.dropna()['rank'])/" tennis_ml_lab/run_all.py
           sed -i "s/a.le-a.we/a['le']-a['we']/g" tennis_ml_lab/run_all.py
+          # Make the result manifest explicit about the source years.
+          sed -i "s/'source_commit':C,'matches'/'source_commit':C,'source_years':[2025,2026],'matches'/" tennis_ml_lab/run_all.py
       - name: Syntax check
         run: python -m py_compile tennis_ml_lab/run_all.py
-      - name: Run all 20 analyses
+      - name: Run all 20 analyses on 2025 + 2026
         run: python tennis_ml_lab/run_all.py
       - name: Upload analysis results
         uses: actions/upload-artifact@v4
@@ -47,6 +52,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "No result changes"
           else
-            git commit -m "Generate ATP 2025 ML lab results"
+            git commit -m "Generate ATP 2025-2026 ML lab results"
             git push
           fi
