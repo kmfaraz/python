@@ -1,0 +1,50 @@
+import json,re,math
+from collections import defaultdict,deque
+from pathlib import Path
+import numpy as np,pandas as pd
+from scipy.stats import spearmanr
+from sklearn.compose import ColumnTransformer
+from sklearn.pipeline import Pipeline
+from sklearn.impute import SimpleImputer
+from sklearn.preprocessing import OneHotEncoder,StandardScaler
+from sklearn.linear_model import LogisticRegression
+from sklearn.tree import DecisionTreeClassifier,export_text
+from sklearn.ensemble import RandomForestClassifier,GradientBoostingClassifier,RandomForestRegressor,GradientBoostingRegressor,IsolationForest
+from sklearn.model_selection import TimeSeriesSplit
+from sklearn.metrics import accuracy_score,log_loss,brier_score_loss,roc_auc_score,mean_absolute_error,mean_squared_error,r2_score,silhouette_score
+from sklearn.cluster import KMeans
+from sklearn.decomposition import PCA
+from sklearn.neighbors import NearestNeighbors
+from sklearn.inspection import permutation_importance
+S=2025;R=np.random.default_rng(S);C='83733587353df8a41f2fd4f516147d5aa83f5a8d';U=f'https://raw.githubusercontent.com/Aneeshers/tennis-sackmann-archive/{C}/atp/atp_matches_2025.csv';O=Path(__file__).parent/'results';O.mkdir(exist_ok=True)
+def js(x):
+ if isinstance(x,(np.integer,)):return int(x)
+ if isinstance(x,(np.floating,)):return None if np.isnan(x) else float(x)
+ if isinstance(x,(pd.Timestamp,)):return str(x)
+ raise TypeError
+def rec(df,n=30): return json.loads(df.head(n).to_json(orient='records',date_format='iso'))
+def met(y,p,name):
+ p=np.clip(np.asarray(p),1e-6,1-1e-6);y=np.asarray(y)
+ return dict(model=name,accuracy=accuracy_score(y,p>=.5),log_loss=log_loss(y,np.c_[1-p,p],labels=[0,1]),brier=brier_score_loss(y,p),auc=roc_auc_score(y,p))
+def prep(n,c,scale=False):
+ ns=[('i',SimpleImputer(strategy='median'))]+([('s',StandardScaler())] if scale else [])
+ return ColumnTransformer([('n',Pipeline(ns),n),('c',Pipeline([('i',SimpleImputer(strategy='most_frequent')),('o',OneHotEncoder(handle_unknown='ignore',sparse_output=False))]),c)])
+def split(d):
+ q=np.sort(d.date.dropna().unique());cut=pd.Timestamp(q[int(.8*len(q))-1]);return d.date<=cut,d.date>cut,cut
+def scoreparse(s):
+ if not isinstance(s,str) or 'W/O' in s.upper() or 'DEF' in s.upper():return (np.nan,)*4
+ wg=lg=ws=ls=0;ok=0
+ for t in s.split():
+  m=re.match(r'^(\d+)-(\d+)',t.replace('RET',''))
+  if m:
+   a,b=map(int,m.groups());wg+=a;lg+=b;ws+=a>b;ls+=b>a;ok=1
+ return (wg,lg,ws,ls) if ok else (np.nan,)*4
+def dyn(raw,k=32):
+ e=defaultdict(lambda:1500.);se=defaultdict(lambda:1500.);r=defaultdict(lambda:deque(maxlen=10));sr=defaultdict(lambda:defaultdict(lambda:deque(maxlen=10)));op=defaultdict(lambda:deque(maxlen=10));last={};hh=defaultdict(lambda:[0,0]);rows=[];traj=[]
+ E=lambda a,b:1/(1+10**((b-a)/400))
+ for ix,x in raw.sort_values(['date','tourney_id','match_num'],kind='stable').iterrows():
+  if pd.isna(x.winner_id) or pd.isna(x.loser_id):continue
+  w,l=int(x.winner_id),int(x.loser_id);sf=str(x.surface);ew,el=e[w],e[l];sw,sl=se[w,sf],se[l,sf];key=tuple(sorted((w,l)));h=hh[key];hw,hl=(h if w==key[0] else h[::-1]);pw,ps=E(ew,el),E(sw,sl)
+  rows.append(dict(row_id=ix,we=ew,le=el,wse=sw,lse=sl,wr=np.mean(r[w]) if r[w] else .5,lr=np.mean(r[l]) if r[l] else .5,wsr=np.mean(sr[w][sf]) if sr[w][sf] else .5,lsr=np.mean(sr[l][sf]) if sr[l][sf] else .5,wrest=(x.date-last[w]).days if w in last else np.nan,lrest=(x.date-last[l]).days if l in last else np.nan,wh=hw,lh=hl,wop=np.mean(op[w]) if op[w] else 1500.,lop=np.mean(op[l]) if op[l] else 1500.,pw=pw,ps=ps))
+  de=k*(1-pw);ds=k*(1-ps);e[w]+=de;e[l]-=de;se[w,sf]+=ds;se[l,sf]-=ds;r[w].append(1);r[l].append(0);sr[w][sf].append(1);sr[l][sf].append(0);op[w].append(el);op[l].append(ew);last[w]=x.date;last[l]=x.date;h[0 if w==key[0] else 1]+=1
+  traj+= [dict(date=x.date,id=w,name=x.winner_name,elo=e[w],surface=sf,selo=se[w,sf]),dict(date=x.date,id=l,name=x.loser_name,elo=e[l],surface=sf,selo=se[l,sf])]
