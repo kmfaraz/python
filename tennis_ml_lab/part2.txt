@@ -1,0 +1,50 @@
+ return pd.DataFrame(rows),pd.DataFrame(traj),dict(e),dict(se)
+def orient(raw,d):
+ z=raw.merge(d,left_index=True,right_on='row_id').sort_values(['date','tourney_id','match_num'],kind='stable').reset_index();f=np.random.default_rng(S).integers(0,2,len(z)).astype(bool);o=pd.DataFrame(dict(date=z.date,tourney=z.tourney_name,surface=z.surface,level=z.tourney_level,round=z['round'],best_of=pd.to_numeric(z.best_of,errors='coerce'),y=(~f).astype(int),score=z.score,minutes=pd.to_numeric(z.minutes,errors='coerce')))
+ A={'name':'winner_name','rank':'winner_rank','points':'winner_rank_points','age':'winner_age','ht':'winner_ht','hand':'winner_hand','elo':'we','selo':'wse','r10':'wr','sr10':'wsr','rest':'wrest','h2h':'wh','op':'wop'};B={'name':'loser_name','rank':'loser_rank','points':'loser_rank_points','age':'loser_age','ht':'loser_ht','hand':'loser_hand','elo':'le','selo':'lse','r10':'lr','sr10':'lsr','rest':'lrest','h2h':'lh','op':'lop'}
+ for k in A:o['p1_'+k]=np.where(f,z[B[k]],z[A[k]]);o['p2_'+k]=np.where(f,z[A[k]],z[B[k]])
+ N=lambda x:pd.to_numeric(x,errors='coerce');o['rank_adv']=N(o.p2_rank)-N(o.p1_rank);o['points_adv']=np.log1p(N(o.p1_points))-np.log1p(N(o.p2_points));o['age_diff']=N(o.p1_age)-N(o.p2_age);o['ht_diff']=N(o.p1_ht)-N(o.p2_ht);o['elo_adv']=N(o.p1_elo)-N(o.p2_elo);o['selo_adv']=N(o.p1_selo)-N(o.p2_selo);o['r10_adv']=N(o.p1_r10)-N(o.p2_r10);o['sr10_adv']=N(o.p1_sr10)-N(o.p2_sr10);o['rest_adv']=N(o.p1_rest)-N(o.p2_rest);o['h2h_adv']=N(o.p1_h2h)-N(o.p2_h2h);o['op_adv']=N(o.p1_op)-N(o.p2_op);o['hand']=o.p1_hand.fillna('U').astype(str)+'-'+o.p2_hand.fillna('U').astype(str);o['lefty_adv']=(o.p1_hand=='L').astype(int)-(o.p2_hand=='L').astype(int)
+ for sf in ['Hard','Clay','Grass']:o['lefty_'+sf]=o.lefty_adv*(o.surface==sf)
+ for q in ['ace','df','svpt','1stIn','1stWon','2ndWon','bpSaved','bpFaced']:
+  a=pd.to_numeric(z['w_'+q],errors='coerce');b=pd.to_numeric(z['l_'+q],errors='coerce');o[q+'_diff']=np.where(f,b-a,a-b)
+ sc=z.score.map(scoreparse);wg=sc.map(lambda x:x[0]);lg=sc.map(lambda x:x[1]);ws=sc.map(lambda x:x[2]);ls=sc.map(lambda x:x[3]);o['games_diff']=np.where(f,lg-wg,wg-lg);o['sets_diff']=np.where(f,ls-ws,ws-ls)
+ return o
+def cvpick(X,y,dates,makers):
+ order=np.argsort(np.asarray(dates));X=X.iloc[order].reset_index(drop=True);y=np.asarray(y)[order];cv=TimeSeriesSplit(5);res=[]
+ for label,mk in makers:
+  v=[]
+  for a,b in cv.split(X):m=mk();m.fit(X.iloc[a],y[a]);p=m.predict_proba(X.iloc[b])[:,1];v.append(log_loss(y[b],np.c_[1-p,p],labels=[0,1]))
+  res.append((np.mean(v),label,mk))
+ return min(res,key=lambda x:x[0]),pd.DataFrame([{'candidate':b,'cv_log_loss':a} for a,b,_ in res]).sort_values('cv_log_loss')
+def main():
+ raw=pd.read_csv(U);raw['date']=pd.to_datetime(raw.tourney_date.astype(str),format='%Y%m%d',errors='coerce');raw=raw.dropna(subset=['date','winner_name','loser_name']);q=np.sort(raw.date.unique());cut0=pd.Timestamp(q[int(.8*len(q))-1]);kt=[]
+ for k in [12,20,28,36,48,64]:
+  d,*_=dyn(raw,k);z=raw[['date']].merge(d,left_index=True,right_on='row_id');p=np.clip(z[z.date<=cut0].pw,1e-6,1);kt.append((float(-np.log(p).mean()),k))
+ bk=min(kt)[1];d,traj,elo,selo=dyn(raw,bk);x=orient(raw,d);tr,te,cut=split(x);train,test=x[tr],x[te];ytr,yte=train.y,test.y;sn=['rank_adv','points_adv','age_diff','ht_diff','best_of'];sc=['surface','level','round','hand'];rn=sn+['elo_adv','selo_adv','r10_adv','sr10_adv','rest_adv','h2h_adv','op_adv'];res={};models={};probs={}
+ (best,lrcv)=cvpick(train[sn+sc],ytr,train.date,[(f'C={c}',lambda c=c:Pipeline([('p',prep(sn,sc,1)),('m',LogisticRegression(C=c,max_iter=3000))])) for c in [.03,.1,.3,1,3]]);lr=best[2]().fit(train[sn+sc],ytr);models['logistic']=lr;probs['Logistic']=lr.predict_proba(test[sn+sc])[:,1]
+ P=prep(sn,sc);Xt=P.fit_transform(train[sn+sc]);Xe=P.transform(test[sn+sc]);base=DecisionTreeClassifier(min_samples_leaf=10,random_state=S).fit(Xt,ytr);aa=np.unique(base.cost_complexity_pruning_path(Xt,ytr).ccp_alphas);aa=np.unique(np.quantile(aa,np.linspace(0,1,min(20,len(aa)))));order=np.argsort(train.date.values);cv=TimeSeriesSplit(5);ar=[]
+ for a in aa:
+  vv=[]
+  for i,j in cv.split(Xt[order]):m=DecisionTreeClassifier(min_samples_leaf=10,ccp_alpha=a,random_state=S).fit(Xt[order][i],ytr.values[order][i]);p=m.predict_proba(Xt[order][j])[:,1];vv.append(log_loss(ytr.values[order][j],np.c_[1-p,p],labels=[0,1]))
+  m=DecisionTreeClassifier(min_samples_leaf=10,ccp_alpha=a,random_state=S).fit(Xt,ytr);ar.append((np.mean(vv),a,m.get_n_leaves(),m.get_depth()))
+ ba=min(ar)[1];tree=DecisionTreeClassifier(min_samples_leaf=10,ccp_alpha=ba,random_state=S).fit(Xt,ytr);probs['Tree']=tree.predict_proba(Xe)[:,1]
+ (best,rfcv)=cvpick(train[sn+sc],ytr,train.date,[(str(z),lambda z=z:Pipeline([('p',prep(sn,sc)),('m',RandomForestClassifier(n_estimators=300,max_depth=z[0],min_samples_leaf=z[1],max_features=z[2],n_jobs=-1,random_state=S))])) for z in [(None,5,'sqrt'),(10,5,'sqrt'),(8,10,.7),(6,10,'sqrt')]]);rf=best[2]().fit(train[sn+sc],ytr);models['rf']=rf;probs['Random forest']=rf.predict_proba(test[sn+sc])[:,1]
+ (best,gbcv)=cvpick(train[sn+sc],ytr,train.date,[(str(z),lambda z=z:Pipeline([('p',prep(sn,sc)),('m',GradientBoostingClassifier(n_estimators=z[0],learning_rate=z[1],max_depth=z[2],random_state=S))])) for z in [(120,.03,1),(150,.03,2),(200,.05,2),(120,.05,3)]]);gb=best[2]().fit(train[sn+sc],ytr);models['gb']=gb;probs['Gradient boosting']=gb.predict_proba(test[sn+sc])[:,1]
+ (best,rollcv)=cvpick(train[rn+sc],ytr,train.date,[(str(z),lambda z=z:Pipeline([('p',prep(rn,sc)),('m',GradientBoostingClassifier(n_estimators=z[0],learning_rate=z[1],max_depth=z[2],random_state=S))])) for z in [(120,.03,1),(150,.03,2),(200,.04,2),(120,.05,3)]]);roll=best[2]().fit(train[rn+sc],ytr);probs['Rolling boosting']=roll.predict_proba(test[rn+sc])[:,1];probs['Elo blend']=1/(1+10**(-(.65*test.elo_adv.fillna(0)+.35*test.selo_adv.fillna(0))/400));show=pd.DataFrame([met(yte,p,k) for k,p in probs.items()]).sort_values('log_loss')
+ ex=test[['date','tourney','p1_name','p2_name','y']].copy();ex['p']=probs['Logistic'];ex['actual']=np.where(ex.y==1,ex.p1_name,ex.p2_name);ex['pred']=np.where(ex.p>=.5,ex.p1_name,ex.p2_name);ex['conf']=np.maximum(ex.p,1-ex.p)
+ res['01_logistic']={'metrics':met(yte,probs['Logistic'],'Logistic'),'cv':rec(lrcv),'confident_correct':rec(ex[ex.actual==ex.pred].sort_values('conf',ascending=False),12),'confident_wrong':rec(ex[ex.actual!=ex.pred].sort_values('conf',ascending=False),12)}
+ res['02_tree']={'metrics':met(yte,probs['Tree'],'Tree'),'alpha_cv':rec(pd.DataFrame(ar,columns=['cv_log_loss','alpha','leaves','depth']).sort_values('cv_log_loss'),15),'leaves':tree.get_n_leaves(),'depth':tree.get_depth(),'rules':export_text(tree,feature_names=list(P.get_feature_names_out()),max_depth=6)}
+ res['03_random_forest']={'metrics':met(yte,probs['Random forest'],'Random forest'),'cv':rec(rfcv)};res['04_gradient_boosting']={'metrics':met(yte,probs['Gradient boosting'],'Gradient boosting'),'cv':rec(gbcv)}
+ latest={}
+ for _,a in raw.sort_values('date').iterrows():
+  for side in ['winner','loser']:
+   if pd.notna(a[side+'_id']):latest[int(a[side+'_id'])]=(a[side+'_name'],a[side+'_rank'])
+ er=pd.DataFrame([{'name':latest[i][0],'elo':v,'rank':latest[i][1]} for i,v in elo.items() if i in latest]).sort_values('elo',ascending=False);rho=spearmanr(er.dropna().elo,-pd.to_numeric(er.dropna().rank)).statistic
+ res['05_elo']={'K_tuning':[{'K':k,'log_loss':ll} for ll,k in sorted(kt)],'chosen_K':bk,'metrics':met(yte,probs['Elo blend'],'Elo blend'),'top25':rec(er,25),'rank_spearman':rho};res['06_showdown']=rec(show,20)
+ cal=[]
+ for nm,p in probs.items():
+  b=pd.cut(p,np.linspace(0,1,11),include_lowest=True);g=pd.DataFrame({'b':b,'p':p,'y':yte.values}).groupby('b',observed=False).agg(n=('y','size'),mean_pred=('p','mean'),actual=('y','mean')).reset_index();g['model']=nm;cal+=rec(g,20)
+ res['07_calibration']={'metrics':rec(show[['model','log_loss','brier']]),'bins':cal}
+ rg=raw.copy();rg['minutes']=pd.to_numeric(rg.minutes,errors='coerce');rg=rg[rg.minutes.between(20,300)&~rg.score.fillna('').str.upper().str.contains('RET|W/O|DEF')];rg['rank_gap']=(pd.to_numeric(rg.winner_rank,errors='coerce')-pd.to_numeric(rg.loser_rank,errors='coerce')).abs();rg['mean_rank']=(pd.to_numeric(rg.winner_rank,errors='coerce')+pd.to_numeric(rg.loser_rank,errors='coerce'))/2;rg['age_gap']=(pd.to_numeric(rg.winner_age,errors='coerce')-pd.to_numeric(rg.loser_age,errors='coerce')).abs();rg['ht_gap']=(pd.to_numeric(rg.winner_ht,errors='coerce')-pd.to_numeric(rg.loser_ht,errors='coerce')).abs();n=['rank_gap','mean_rank','age_gap','ht_gap','best_of'];c=['surface','tourney_level','round'];a,b,_=split(rg);rr=[]
+ for nm,M in [('RF',RandomForestRegressor(n_estimators=350,min_samples_leaf=5,n_jobs=-1,random_state=S)),('GB',GradientBoostingRegressor(n_estimators=180,learning_rate=.03,max_depth=2,random_state=S))]:
+  m=Pipeline([('p',prep(n,c)),('m',M)]).fit(rg.loc[a,n+c],rg.loc[a,'minutes']);p=m.predict(rg.loc[b,n+c]);rr.append({'model':nm,'MAE':mean_absolute_error(rg.loc[b,'minutes'],p),'RMSE':mean_squared_error(rg.loc[b,'minutes'],p)**.5,'R2':r2_score(rg.loc[b,'minutes'],p)})
