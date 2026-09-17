@@ -1,0 +1,3984 @@
+{
+  "meta": {
+    "source_commit": "83733587353df8a41f2fd4f516147d5aa83f5a8d",
+    "matches": 2944,
+    "train": 2729,
+    "test": 215,
+    "cutoff": "2025-10-13",
+    "best_elo_K": 48
+  },
+  "results": {
+    "01_logistic": {
+      "metrics": {
+        "model": "Logistic",
+        "accuracy": 0.7162790697674418,
+        "log_loss": 0.6079340234089418,
+        "brier": 0.20899995004883617,
+        "auc": 0.7601547388781431
+      },
+      "cv": [
+        {
+          "candidate": "C=0.03",
+          "cv_log_loss": 0.6449866891
+        },
+        {
+          "candidate": "C=0.1",
+          "cv_log_loss": 0.6470349936
+        },
+        {
+          "candidate": "C=0.3",
+          "cv_log_loss": 0.651823404
+        },
+        {
+          "candidate": "C=1",
+          "cv_log_loss": 0.6576543454
+        },
+        {
+          "candidate": "C=3",
+          "cv_log_loss": 0.6616340344
+        }
+      ],
+      "confident_correct": [
+        {
+          "date": "2025-11-02T00:00:00.000",
+          "tourney": "Athens",
+          "p1_name": "Lorenzo Musetti",
+          "p2_name": "Stan Wawrinka",
+          "y": 1,
+          "p": 0.8476984664,
+          "actual": "Lorenzo Musetti",
+          "pred": "Lorenzo Musetti",
+          "conf": 0.8476984664
+        },
+        {
+          "date": "2025-10-20T00:00:00.000",
+          "tourney": "Basel",
+          "p1_name": "Jakub Mensik",
+          "p2_name": "Henry Bernet",
+          "y": 1,
+          "p": 0.8130271092,
+          "actual": "Jakub Mensik",
+          "pred": "Jakub Mensik",
+          "conf": 0.8130271092
+        },
+        {
+          "date": "2025-10-20T00:00:00.000",
+          "tourney": "Vienna",
+          "p1_name": "Daniel Altmaier",
+          "p2_name": "Jannik Sinner",
+          "y": 0,
+          "p": 0.1898476171,
+          "actual": "Jannik Sinner",
+          "pred": "Jannik Sinner",
+          "conf": 0.8101523829
+        },
+        {
+          "date": "2025-10-27T00:00:00.000",
+          "tourney": "Paris Masters",
+          "p1_name": "Taylor Fritz",
+          "p2_name": "Aleksandar Vukic",
+          "y": 1,
+          "p": 0.8001449178,
+          "actual": "Taylor Fritz",
+          "pred": "Taylor Fritz",
+          "conf": 0.8001449178
+        },
+        {
+          "date": "2025-10-20T00:00:00.000",
+          "tourney": "Basel",
+          "p1_name": "Stan Wawrinka",
+          "p2_name": "Casper Ruud",
+          "y": 0,
+          "p": 0.2040349883,
+          "actual": "Casper Ruud",
+          "pred": "Casper Ruud",
+          "conf": 0.7959650117
+        },
+        {
+          "date": "2025-10-20T00:00:00.000",
+          "tourney": "Vienna",
+          "p1_name": "Alexander Zverev",
+          "p2_name": "Jacob Fearnley",
+          "y": 1,
+          "p": 0.7718167818,
+          "actual": "Alexander Zverev",
+          "pred": "Alexander Zverev",
+          "conf": 0.7718167818
+        },
+        {
+          "date": "2025-10-27T00:00:00.000",
+          "tourney": "Paris Masters",
+          "p1_name": "Zizou Bergs",
+          "p2_name": "Jannik Sinner",
+          "y": 0,
+          "p": 0.2287062257,
+          "actual": "Jannik Sinner",
+          "pred": "Jannik Sinner",
+          "conf": 0.7712937743
+        },
+        {
+          "date": "2025-11-02T00:00:00.000",
+          "tourney": "Athens",
+          "p1_name": "Novak Djokovic",
+          "p2_name": "Yannick Hanfmann",
+          "y": 1,
+          "p": 0.7615752301,
+          "actual": "Novak Djokovic",
+          "pred": "Novak Djokovic",
+          "conf": 0.7615752301
+        },
+        {
+          "date": "2025-10-20T00:00:00.000",
+          "tourney": "Vienna",
+          "p1_name": "Alex De Minaur",
+          "p2_name": "Jurij Rodionov",
+          "y": 1,
+          "p": 0.7598222634,
+          "actual": "Alex De Minaur",
+          "pred": "Alex De Minaur",
+          "conf": 0.7598222634
+        },
+        {
+          "date": "2025-10-20T00:00:00.000",
+          "tourney": "Basel",
+          "p1_name": "Ben Shelton",
+          "p2_name": "Kamil Majchrzak",
+          "y": 1,
+          "p": 0.7558856289,
+          "actual": "Ben Shelton",
+          "pred": "Ben Shelton",
+          "conf": 0.7558856289
+        },
+        {
+          "date": "2025-10-20T00:00:00.000",
+          "tourney": "Vienna",
+          "p1_name": "Matteo Arnaldi",
+          "p2_name": "Alexander Zverev",
+          "y": 0,
+          "p": 0.2507594209,
+          "actual": "Alexander Zverev",
+          "pred": "Alexander Zverev",
+          "conf": 0.7492405791
+        },
+        {
+          "date": "2025-10-20T00:00:00.000",
+          "tourney": "Basel",
+          "p1_name": "Marin Cilic",
+          "p2_name": "Felix Auger Aliassime",
+          "y": 0,
+          "p": 0.2769550072,
+          "actual": "Felix Auger Aliassime",
+          "pred": "Felix Auger Aliassime",
+          "conf": 0.7230449928
+        }
+      ],
+      "confident_wrong": [
+        {
+          "date": "2025-11-02T00:00:00.000",
+          "tourney": "Metz",
+          "p1_name": "Alexander Bublik",
+          "p2_name": "Vitaliy Sachko",
+          "y": 0,
+          "p": 0.8069222575,
+          "actual": "Vitaliy Sachko",
+          "pred": "Alexander Bublik",
+          "conf": 0.8069222575
+        },
+        {
+          "date": "2025-10-27T00:00:00.000",
+          "tourney": "Paris Masters",
+          "p1_name": "Cameron Norrie",
+          "p2_name": "Carlos Alcaraz",
+          "y": 1,
+          "p": 0.2280237394,
+          "actual": "Cameron Norrie",
+          "pred": "Carlos Alcaraz",
+          "conf": 0.7719762606
+        },
+        {
+          "date": "2025-10-20T00:00:00.000",
+          "tourney": "Basel",
+          "p1_name": "Jaume Munar",
+          "p2_name": "Ben Shelton",
+          "y": 1,
+          "p": 0.2924406427,
+          "actual": "Jaume Munar",
+          "pred": "Ben Shelton",
+          "conf": 0.7075593573
+        },
+        {
+          "date": "2025-11-02T00:00:00.000",
+          "tourney": "Metz",
+          "p1_name": "Vitaliy Sachko",
+          "p2_name": "Giovanni Mpetshi Perricard",
+          "y": 1,
+          "p": 0.2939749861,
+          "actual": "Vitaliy Sachko",
+          "pred": "Giovanni Mpetshi Perricard",
+          "conf": 0.7060250139
+        },
+        {
+          "date": "2025-12-17T00:00:00.000",
+          "tourney": "Next Gen Finals",
+          "p1_name": "Rafael Jodar",
+          "p2_name": "Learner Tien",
+          "y": 1,
+          "p": 0.2988370691,
+          "actual": "Rafael Jodar",
+          "pred": "Learner Tien",
+          "conf": 0.7011629309
+        },
+        {
+          "date": "2025-10-20T00:00:00.000",
+          "tourney": "Basel",
+          "p1_name": "Miomir Kecmanovic",
+          "p2_name": "Stan Wawrinka",
+          "y": 0,
+          "p": 0.6913002714,
+          "actual": "Stan Wawrinka",
+          "pred": "Miomir Kecmanovic",
+          "conf": 0.6913002714
+        },
+        {
+          "date": "2025-10-20T00:00:00.000",
+          "tourney": "Basel",
+          "p1_name": "Jaume Munar",
+          "p2_name": "Felix Auger Aliassime",
+          "y": 1,
+          "p": 0.3204961923,
+          "actual": "Jaume Munar",
+          "pred": "Felix Auger Aliassime",
+          "conf": 0.6795038077
+        },
+        {
+          "date": "2025-10-20T00:00:00.000",
+          "tourney": "Basel",
+          "p1_name": "Botic Van De Zandschulp",
+          "p2_name": "Jiri Lehecka",
+          "y": 1,
+          "p": 0.3215437878,
+          "actual": "Botic Van De Zandschulp",
+          "pred": "Jiri Lehecka",
+          "conf": 0.6784562122
+        },
+        {
+          "date": "2025-11-02T00:00:00.000",
+          "tourney": "Metz",
+          "p1_name": "Aleksandar Kovacevic",
+          "p2_name": "Clement Tabur",
+          "y": 0,
+          "p": 0.6686873121,
+          "actual": "Clement Tabur",
+          "pred": "Aleksandar Kovacevic",
+          "conf": 0.6686873121
+        },
+        {
+          "date": "2025-11-02T00:00:00.000",
+          "tourney": "Athens",
+          "p1_name": "Stan Wawrinka",
+          "p2_name": "Botic Van De Zandschulp",
+          "y": 1,
+          "p": 0.3434935376,
+          "actual": "Stan Wawrinka",
+          "pred": "Botic Van De Zandschulp",
+          "conf": 0.6565064624
+        },
+        {
+          "date": "2025-11-02T00:00:00.000",
+          "tourney": "Metz",
+          "p1_name": "Clement Tabur",
+          "p2_name": "Alexander Blockx",
+          "y": 1,
+          "p": 0.3438803706,
+          "actual": "Clement Tabur",
+          "pred": "Alexander Blockx",
+          "conf": 0.6561196294
+        },
+        {
+          "date": "2025-10-27T00:00:00.000",
+          "tourney": "Paris Masters",
+          "p1_name": "Lorenzo Sonego",
+          "p2_name": "Lorenzo Musetti",
+          "y": 1,
+          "p": 0.3459846922,
+          "actual": "Lorenzo Sonego",
+          "pred": "Lorenzo Musetti",
+          "conf": 0.6540153078
+        }
+      ]
+    },
+    "02_tree": {
+      "metrics": {
+        "model": "Tree",
+        "accuracy": 0.5627906976744186,
+        "log_loss": 0.6904392208314837,
+        "brier": 0.24864626280262214,
+        "auc": 0.5
+      },
+      "alpha_cv": [
+        {
+          "cv_log_loss": 0.6631397235,
+          "alpha": 0.03903712,
+          "leaves": 1,
+          "depth": 0
+        },
+        {
+          "cv_log_loss": 1.0636136008,
+          "alpha": 0.0016117411,
+          "leaves": 9,
+          "depth": 5
+        },
+        {
+          "cv_log_loss": 1.0914754666,
+          "alpha": 0.0012005731,
+          "leaves": 35,
+          "depth": 13
+        },
+        {
+          "cv_log_loss": 1.2551985405,
+          "alpha": 0.0009937602,
+          "leaves": 50,
+          "depth": 13
+        },
+        {
+          "cv_log_loss": 1.2607306438,
+          "alpha": 0.000891601,
+          "leaves": 64,
+          "depth": 13
+        },
+        {
+          "cv_log_loss": 1.3201051,
+          "alpha": 0.000824678,
+          "leaves": 71,
+          "depth": 13
+        },
+        {
+          "cv_log_loss": 1.4985301322,
+          "alpha": 0.0007538493,
+          "leaves": 80,
+          "depth": 13
+        },
+        {
+          "cv_log_loss": 1.5019165093,
+          "alpha": 0.0007097816,
+          "leaves": 94,
+          "depth": 14
+        },
+        {
+          "cv_log_loss": 1.5519863888,
+          "alpha": 0.0006483443,
+          "leaves": 109,
+          "depth": 14
+        },
+        {
+          "cv_log_loss": 1.5552550727,
+          "alpha": 0.0005899457,
+          "leaves": 120,
+          "depth": 14
+        },
+        {
+          "cv_log_loss": 1.5601096631,
+          "alpha": 0.0005449661,
+          "leaves": 136,
+          "depth": 14
+        },
+        {
+          "cv_log_loss": 1.5627661823,
+          "alpha": 0.0004961207,
+          "leaves": 146,
+          "depth": 15
+        },
+        {
+          "cv_log_loss": 1.5948202868,
+          "alpha": 0.0004221498,
+          "leaves": 152,
+          "depth": 15
+        },
+        {
+          "cv_log_loss": 1.5956645275,
+          "alpha": 0.0003812841,
+          "leaves": 160,
+          "depth": 15
+        },
+        {
+          "cv_log_loss": 1.6000776161,
+          "alpha": 0.0003325463,
+          "leaves": 166,
+          "depth": 15
+        }
+      ],
+      "leaves": 1,
+      "depth": 0,
+      "rules": "|--- class: 1\n"
+    },
+    "03_random_forest": {
+      "metrics": {
+        "model": "Random forest",
+        "accuracy": 0.7116279069767442,
+        "log_loss": 0.6107400722498112,
+        "brier": 0.2098191580544235,
+        "auc": 0.7600668190610165
+      },
+      "cv": [
+        {
+          "candidate": "(6, 10, 'sqrt')",
+          "cv_log_loss": 0.6489024006
+        },
+        {
+          "candidate": "(10, 5, 'sqrt')",
+          "cv_log_loss": 0.652238518
+        },
+        {
+          "candidate": "(None, 5, 'sqrt')",
+          "cv_log_loss": 0.6535520751
+        },
+        {
+          "candidate": "(8, 10, 0.7)",
+          "cv_log_loss": 0.6552499488
+        }
+      ]
+    },
+    "04_gradient_boosting": {
+      "metrics": {
+        "model": "Gradient boosting",
+        "accuracy": 0.7116279069767442,
+        "log_loss": 0.6071792343893057,
+        "brier": 0.20833618220155445,
+        "auc": 0.7638913311060314
+      },
+      "cv": [
+        {
+          "candidate": "(120, 0.03, 1)",
+          "cv_log_loss": 0.6476114086
+        },
+        {
+          "candidate": "(150, 0.03, 2)",
+          "cv_log_loss": 0.6501464387
+        },
+        {
+          "candidate": "(200, 0.05, 2)",
+          "cv_log_loss": 0.6564804707
+        },
+        {
+          "candidate": "(120, 0.05, 3)",
+          "cv_log_loss": 0.6604098308
+        }
+      ]
+    },
+    "05_elo": {
+      "K_tuning": [
+        {
+          "K": 48,
+          "log_loss": 0.6592030004736167
+        },
+        {
+          "K": 36,
+          "log_loss": 0.6594224542147675
+        },
+        {
+          "K": 28,
+          "log_loss": 0.6610435692029895
+        },
+        {
+          "K": 64,
+          "log_loss": 0.661605841264989
+        },
+        {
+          "K": 20,
+          "log_loss": 0.6645039671697991
+        },
+        {
+          "K": 12,
+          "log_loss": 0.6709866913210298
+        }
+      ],
+      "chosen_K": 48,
+      "metrics": {
+        "model": "Elo blend",
+        "accuracy": 0.7069767441860465,
+        "log_loss": 0.5957662982149106,
+        "brier": 0.20384861166749416,
+        "auc": 0.7592755407068754
+      },
+      "top25": [
+        {
+          "name": "Jannik Sinner",
+          "elo": 2081.1511408193,
+          "rank": 2.0
+        },
+        {
+          "name": "Carlos Alcaraz",
+          "elo": 2029.7912309772,
+          "rank": 1.0
+        },
+        {
+          "name": "Novak Djokovic",
+          "elo": 1869.149894635,
+          "rank": 5.0
+        },
+        {
+          "name": "Felix Auger Aliassime",
+          "elo": 1842.8462004961,
+          "rank": 8.0
+        },
+        {
+          "name": "Alexander Zverev",
+          "elo": 1809.8588165715,
+          "rank": 3.0
+        },
+        {
+          "name": "Taylor Fritz",
+          "elo": 1767.6701175103,
+          "rank": 6.0
+        },
+        {
+          "name": "Valentin Vacherot",
+          "elo": 1767.530820308,
+          "rank": 40.0
+        },
+        {
+          "name": "Alex De Minaur",
+          "elo": 1758.7957150369,
+          "rank": 7.0
+        },
+        {
+          "name": "Daniil Medvedev",
+          "elo": 1754.2374399681,
+          "rank": 13.0
+        },
+        {
+          "name": "Alexander Bublik",
+          "elo": 1753.4405504741,
+          "rank": 13.0
+        },
+        {
+          "name": "Learner Tien",
+          "elo": 1747.0981352761,
+          "rank": 28.0
+        },
+        {
+          "name": "Lorenzo Musetti",
+          "elo": 1701.8252419774,
+          "rank": 9.0
+        },
+        {
+          "name": "Jack Draper",
+          "elo": 1699.3342552154,
+          "rank": 5.0
+        },
+        {
+          "name": "Joao Fonseca",
+          "elo": 1699.2037836203,
+          "rank": 28.0
+        },
+        {
+          "name": "Ben Shelton",
+          "elo": 1697.5624928225,
+          "rank": 5.0
+        },
+        {
+          "name": "Alejandro Davidovich Fokina",
+          "elo": 1678.5563235909,
+          "rank": 15.0
+        },
+        {
+          "name": "Cameron Norrie",
+          "elo": 1674.2785204431,
+          "rank": 27.0
+        },
+        {
+          "name": "Jiri Lehecka",
+          "elo": 1668.7077189717,
+          "rank": 17.0
+        },
+        {
+          "name": "Casper Ruud",
+          "elo": 1661.2775226058,
+          "rank": 9.0
+        },
+        {
+          "name": "Tommy Paul",
+          "elo": 1659.1664237602,
+          "rank": 14.0
+        },
+        {
+          "name": "Arthur Fils",
+          "elo": 1654.190901467,
+          "rank": 21.0
+        },
+        {
+          "name": "Arthur Rinderknech",
+          "elo": 1652.4839558479,
+          "rank": 29.0
+        },
+        {
+          "name": "Matteo Berrettini",
+          "elo": 1637.2662808875,
+          "rank": 56.0
+        },
+        {
+          "name": "Flavio Cobolli",
+          "elo": 1633.0960124392,
+          "rank": 22.0
+        },
+        {
+          "name": "Holger Rune",
+          "elo": 1627.7455145009,
+          "rank": 11.0
+        }
+      ],
+      "rank_spearman": 0.13916394058474638
+    },
+    "06_showdown": [
+      {
+        "model": "Elo blend",
+        "accuracy": 0.7069767442,
+        "log_loss": 0.5957662982,
+        "brier": 0.2038486117,
+        "auc": 0.7592755407
+      },
+      {
+        "model": "Rolling boosting",
+        "accuracy": 0.7069767442,
+        "log_loss": 0.5979610454,
+        "brier": 0.2042818593,
+        "auc": 0.7718480746
+      },
+      {
+        "model": "Gradient boosting",
+        "accuracy": 0.711627907,
+        "log_loss": 0.6071792344,
+        "brier": 0.2083361822,
+        "auc": 0.7638913311
+      },
+      {
+        "model": "Logistic",
+        "accuracy": 0.7162790698,
+        "log_loss": 0.6079340234,
+        "brier": 0.20899995,
+        "auc": 0.7601547389
+      },
+      {
+        "model": "Random forest",
+        "accuracy": 0.711627907,
+        "log_loss": 0.6107400722,
+        "brier": 0.2098191581,
+        "auc": 0.7600668191
+      },
+      {
+        "model": "Tree",
+        "accuracy": 0.5627906977,
+        "log_loss": 0.6904392208,
+        "brier": 0.2486462628,
+        "auc": 0.5
+      }
+    ],
+    "07_calibration": {
+      "metrics": [
+        {
+          "model": "Elo blend",
+          "log_loss": 0.5957662982,
+          "brier": 0.2038486117
+        },
+        {
+          "model": "Rolling boosting",
+          "log_loss": 0.5979610454,
+          "brier": 0.2042818593
+        },
+        {
+          "model": "Gradient boosting",
+          "log_loss": 0.6071792344,
+          "brier": 0.2083361822
+        },
+        {
+          "model": "Logistic",
+          "log_loss": 0.6079340234,
+          "brier": 0.20899995
+        },
+        {
+          "model": "Random forest",
+          "log_loss": 0.6107400722,
+          "brier": 0.2098191581
+        },
+        {
+          "model": "Tree",
+          "log_loss": 0.6904392208,
+          "brier": 0.2486462628
+        }
+      ],
+      "bins": [
+        {
+          "b": {
+            "closed": "right",
+            "closed_left": false,
+            "closed_right": true,
+            "is_empty": false,
+            "left": -0.001,
+            "length": 0.101,
+            "mid": 0.0495,
+            "open_left": true,
+            "open_right": false,
+            "right": 0.1
+          },
+          "n": 0,
+          "mean_pred": null,
+          "actual": null,
+          "model": "Logistic"
+        },
+        {
+          "b": {
+            "closed": "right",
+            "closed_left": false,
+            "closed_right": true,
+            "is_empty": false,
+            "left": 0.1,
+            "length": 0.1,
+            "mid": 0.15,
+            "open_left": true,
+            "open_right": false,
+            "right": 0.2
+          },
+          "n": 1,
+          "mean_pred": 0.1898476171,
+          "actual": 0.0,
+          "model": "Logistic"
+        },
+        {
+          "b": {
+            "closed": "right",
+            "closed_left": false,
+            "closed_right": true,
+            "is_empty": false,
+            "left": 0.2,
+            "length": 0.1,
+            "mid": 0.25,
+            "open_left": true,
+            "open_right": false,
+            "right": 0.3
+          },
+          "n": 16,
+          "mean_pred": 0.2717570479,
+          "actual": 0.25,
+          "model": "Logistic"
+        },
+        {
+          "b": {
+            "closed": "right",
+            "closed_left": false,
+            "closed_right": true,
+            "is_empty": false,
+            "left": 0.3,
+            "length": 0.1,
+            "mid": 0.35,
+            "open_left": true,
+            "open_right": false,
+            "right": 0.4
+          },
+          "n": 29,
+          "mean_pred": 0.3518846299,
+          "actual": 0.275862069,
+          "model": "Logistic"
+        },
+        {
+          "b": {
+            "closed": "right",
+            "closed_left": false,
+            "closed_right": true,
+            "is_empty": false,
+            "left": 0.4,
+            "length": 0.1,
+            "mid": 0.45,
+            "open_left": true,
+            "open_right": false,
+            "right": 0.5
+          },
+          "n": 51,
+          "mean_pred": 0.4512431201,
+          "actual": 0.3921568627,
+          "model": "Logistic"
+        },
+        {
+          "b": {
+            "closed": "right",
+            "closed_left": false,
+            "closed_right": true,
+            "is_empty": false,
+            "left": 0.5,
+            "length": 0.1,
+            "mid": 0.55,
+            "open_left": true,
+            "open_right": false,
+            "right": 0.6
+          },
+          "n": 58,
+          "mean_pred": 0.546248424,
+          "actual": 0.7068965517,
+          "model": "Logistic"
+        },
+        {
+          "b": {
+            "closed": "right",
+            "closed_left": false,
+            "closed_right": true,
+            "is_empty": false,
+            "left": 0.6,
+            "length": 0.1,
+            "mid": 0.65,
+            "open_left": true,
+            "open_right": false,
+            "right": 0.7
+          },
+          "n": 46,
+          "mean_pred": 0.6416932586,
+          "actual": 0.7608695652,
+          "model": "Logistic"
+        },
+        {
+          "b": {
+            "closed": "right",
+            "closed_left": false,
+            "closed_right": true,
+            "is_empty": false,
+            "left": 0.7,
+            "length": 0.1,
+            "mid": 0.75,
+            "open_left": true,
+            "open_right": false,
+            "right": 0.8
+          },
+          "n": 10,
+          "mean_pred": 0.7305028116,
+          "actual": 1.0,
+          "model": "Logistic"
+        },
+        {
+          "b": {
+            "closed": "right",
+            "closed_left": false,
+            "closed_right": true,
+            "is_empty": false,
+            "left": 0.8,
+            "length": 0.1,
+            "mid": 0.85,
+            "open_left": true,
+            "open_right": false,
+            "right": 0.9
+          },
+          "n": 4,
+          "mean_pred": 0.8169481877,
+          "actual": 0.75,
+          "model": "Logistic"
+        },
+        {
+          "b": {
+            "closed": "right",
+            "closed_left": false,
+            "closed_right": true,
+            "is_empty": false,
+            "left": 0.9,
+            "length": 0.1,
+            "mid": 0.95,
+            "open_left": true,
+            "open_right": false,
+            "right": 1.0
+          },
+          "n": 0,
+          "mean_pred": null,
+          "actual": null,
+          "model": "Logistic"
+        },
+        {
+          "b": {
+            "closed": "right",
+            "closed_left": false,
+            "closed_right": true,
+            "is_empty": false,
+            "left": -0.001,
+            "length": 0.101,
+            "mid": 0.0495,
+            "open_left": true,
+            "open_right": false,
+            "right": 0.1
+          },
+          "n": 0,
+          "mean_pred": null,
+          "actual": null,
+          "model": "Tree"
+        },
+        {
+          "b": {
+            "closed": "right",
+            "closed_left": false,
+            "closed_right": true,
+            "is_empty": false,
+            "left": 0.1,
+            "length": 0.1,
+            "mid": 0.15,
+            "open_left": true,
+            "open_right": false,
+            "right": 0.2
+          },
+          "n": 0,
+          "mean_pred": null,
+          "actual": null,
+          "model": "Tree"
+        },
+        {
+          "b": {
+            "closed": "right",
+            "closed_left": false,
+            "closed_right": true,
+            "is_empty": false,
+            "left": 0.2,
+            "length": 0.1,
+            "mid": 0.25,
+            "open_left": true,
+            "open_right": false,
+            "right": 0.3
+          },
+          "n": 0,
+          "mean_pred": null,
+          "actual": null,
+          "model": "Tree"
+        },
+        {
+          "b": {
+            "closed": "right",
+            "closed_left": false,
+            "closed_right": true,
+            "is_empty": false,
+            "left": 0.3,
+            "length": 0.1,
+            "mid": 0.35,
+            "open_left": true,
+            "open_right": false,
+            "right": 0.4
+          },
+          "n": 0,
+          "mean_pred": null,
+          "actual": null,
+          "model": "Tree"
+        },
+        {
+          "b": {
+            "closed": "right",
+            "closed_left": false,
+            "closed_right": true,
+            "is_empty": false,
+            "left": 0.4,
+            "length": 0.1,
+            "mid": 0.45,
+            "open_left": true,
+            "open_right": false,
+            "right": 0.5
+          },
+          "n": 0,
+          "mean_pred": null,
+          "actual": null,
+          "model": "Tree"
+        },
+        {
+          "b": {
+            "closed": "right",
+            "closed_left": false,
+            "closed_right": true,
+            "is_empty": false,
+            "left": 0.5,
+            "length": 0.1,
+            "mid": 0.55,
+            "open_left": true,
+            "open_right": false,
+            "right": 0.6
+          },
+          "n": 215,
+          "mean_pred": 0.5119091242,
+          "actual": 0.5627906977,
+          "model": "Tree"
+        },
+        {
+          "b": {
+            "closed": "right",
+            "closed_left": false,
+            "closed_right": true,
+            "is_empty": false,
+            "left": 0.6,
+            "length": 0.1,
+            "mid": 0.65,
+            "open_left": true,
+            "open_right": false,
+            "right": 0.7
+          },
+          "n": 0,
+          "mean_pred": null,
+          "actual": null,
+          "model": "Tree"
+        },
+        {
+          "b": {
+            "closed": "right",
+            "closed_left": false,
+            "closed_right": true,
+            "is_empty": false,
+            "left": 0.7,
+            "length": 0.1,
+            "mid": 0.75,
+            "open_left": true,
+            "open_right": false,
+            "right": 0.8
+          },
+          "n": 0,
+          "mean_pred": null,
+          "actual": null,
+          "model": "Tree"
+        },
+        {
+          "b": {
+            "closed": "right",
+            "closed_left": false,
+            "closed_right": true,
+            "is_empty": false,
+            "left": 0.8,
+            "length": 0.1,
+            "mid": 0.85,
+            "open_left": true,
+            "open_right": false,
+            "right": 0.9
+          },
+          "n": 0,
+          "mean_pred": null,
+          "actual": null,
+          "model": "Tree"
+        },
+        {
+          "b": {
+            "closed": "right",
+            "closed_left": false,
+            "closed_right": true,
+            "is_empty": false,
+            "left": 0.9,
+            "length": 0.1,
+            "mid": 0.95,
+            "open_left": true,
+            "open_right": false,
+            "right": 1.0
+          },
+          "n": 0,
+          "mean_pred": null,
+          "actual": null,
+          "model": "Tree"
+        },
+        {
+          "b": {
+            "closed": "right",
+            "closed_left": false,
+            "closed_right": true,
+            "is_empty": false,
+            "left": -0.001,
+            "length": 0.101,
+            "mid": 0.0495,
+            "open_left": true,
+            "open_right": false,
+            "right": 0.1
+          },
+          "n": 0,
+          "mean_pred": null,
+          "actual": null,
+          "model": "Random forest"
+        },
+        {
+          "b": {
+            "closed": "right",
+            "closed_left": false,
+            "closed_right": true,
+            "is_empty": false,
+            "left": 0.1,
+            "length": 0.1,
+            "mid": 0.15,
+            "open_left": true,
+            "open_right": false,
+            "right": 0.2
+          },
+          "n": 0,
+          "mean_pred": null,
+          "actual": null,
+          "model": "Random forest"
+        },
+        {
+          "b": {
+            "closed": "right",
+            "closed_left": false,
+            "closed_right": true,
+            "is_empty": false,
+            "left": 0.2,
+            "length": 0.1,
+            "mid": 0.25,
+            "open_left": true,
+            "open_right": false,
+            "right": 0.3
+          },
+          "n": 11,
+          "mean_pred": 0.291866049,
+          "actual": 0.0909090909,
+          "model": "Random forest"
+        },
+        {
+          "b": {
+            "closed": "right",
+            "closed_left": false,
+            "closed_right": true,
+            "is_empty": false,
+            "left": 0.3,
+            "length": 0.1,
+            "mid": 0.35,
+            "open_left": true,
+            "open_right": false,
+            "right": 0.4
+          },
+          "n": 43,
+          "mean_pred": 0.3497552582,
+          "actual": 0.2790697674,
+          "model": "Random forest"
+        },
+        {
+          "b": {
+            "closed": "right",
+            "closed_left": false,
+            "closed_right": true,
+            "is_empty": false,
+            "left": 0.4,
+            "length": 0.1,
+            "mid": 0.45,
+            "open_left": true,
+            "open_right": false,
+            "right": 0.5
+          },
+          "n": 34,
+          "mean_pred": 0.4517773356,
+          "actual": 0.4411764706,
+          "model": "Random forest"
+        },
+        {
+          "b": {
+            "closed": "right",
+            "closed_left": false,
+            "closed_right": true,
+            "is_empty": false,
+            "left": 0.5,
+            "length": 0.1,
+            "mid": 0.55,
+            "open_left": true,
+            "open_right": false,
+            "right": 0.6
+          },
+          "n": 57,
+          "mean_pred": 0.55372313,
+          "actual": 0.649122807,
+          "model": "Random forest"
+        },
+        {
+          "b": {
+            "closed": "right",
+            "closed_left": false,
+            "closed_right": true,
+            "is_empty": false,
+            "left": 0.6,
+            "length": 0.1,
+            "mid": 0.65,
+            "open_left": true,
+            "open_right": false,
+            "right": 0.7
+          },
+          "n": 67,
+          "mean_pred": 0.6349811095,
+          "actual": 0.8059701493,
+          "model": "Random forest"
+        },
+        {
+          "b": {
+            "closed": "right",
+            "closed_left": false,
+            "closed_right": true,
+            "is_empty": false,
+            "left": 0.7,
+            "length": 0.1,
+            "mid": 0.75,
+            "open_left": true,
+            "open_right": false,
+            "right": 0.8
+          },
+          "n": 3,
+          "mean_pred": 0.7133394077,
+          "actual": 0.6666666667,
+          "model": "Random forest"
+        },
+        {
+          "b": {
+            "closed": "right",
+            "closed_left": false,
+            "closed_right": true,
+            "is_empty": false,
+            "left": 0.8,
+            "length": 0.1,
+            "mid": 0.85,
+            "open_left": true,
+            "open_right": false,
+            "right": 0.9
+          },
+          "n": 0,
+          "mean_pred": null,
+          "actual": null,
+          "model": "Random forest"
+        },
+        {
+          "b": {
+            "closed": "right",
+            "closed_left": false,
+            "closed_right": true,
+            "is_empty": false,
+            "left": 0.9,
+            "length": 0.1,
+            "mid": 0.95,
+            "open_left": true,
+            "open_right": false,
+            "right": 1.0
+          },
+          "n": 0,
+          "mean_pred": null,
+          "actual": null,
+          "model": "Random forest"
+        },
+        {
+          "b": {
+            "closed": "right",
+            "closed_left": false,
+            "closed_right": true,
+            "is_empty": false,
+            "left": -0.001,
+            "length": 0.101,
+            "mid": 0.0495,
+            "open_left": true,
+            "open_right": false,
+            "right": 0.1
+          },
+          "n": 0,
+          "mean_pred": null,
+          "actual": null,
+          "model": "Gradient boosting"
+        },
+        {
+          "b": {
+            "closed": "right",
+            "closed_left": false,
+            "closed_right": true,
+            "is_empty": false,
+            "left": 0.1,
+            "length": 0.1,
+            "mid": 0.15,
+            "open_left": true,
+            "open_right": false,
+            "right": 0.2
+          },
+          "n": 0,
+          "mean_pred": null,
+          "actual": null,
+          "model": "Gradient boosting"
+        },
+        {
+          "b": {
+            "closed": "right",
+            "closed_left": false,
+            "closed_right": true,
+            "is_empty": false,
+            "left": 0.2,
+            "length": 0.1,
+            "mid": 0.25,
+            "open_left": true,
+            "open_right": false,
+            "right": 0.3
+          },
+          "n": 6,
+          "mean_pred": 0.2871327548,
+          "actual": 0.1666666667,
+          "model": "Gradient boosting"
+        },
+        {
+          "b": {
+            "closed": "right",
+            "closed_left": false,
+            "closed_right": true,
+            "is_empty": false,
+            "left": 0.3,
+            "length": 0.1,
+            "mid": 0.35,
+            "open_left": true,
+            "open_right": false,
+            "right": 0.4
+          },
+          "n": 40,
+          "mean_pred": 0.3240164442,
+          "actual": 0.25,
+          "model": "Gradient boosting"
+        },
+        {
+          "b": {
+            "closed": "right",
+            "closed_left": false,
+            "closed_right": true,
+            "is_empty": false,
+            "left": 0.4,
+            "length": 0.1,
+            "mid": 0.45,
+            "open_left": true,
+            "open_right": false,
+            "right": 0.5
+          },
+          "n": 36,
+          "mean_pred": 0.4506837358,
+          "actual": 0.3888888889,
+          "model": "Gradient boosting"
+        },
+        {
+          "b": {
+            "closed": "right",
+            "closed_left": false,
+            "closed_right": true,
+            "is_empty": false,
+            "left": 0.5,
+            "length": 0.1,
+            "mid": 0.55,
+            "open_left": true,
+            "open_right": false,
+            "right": 0.6
+          },
+          "n": 82,
+          "mean_pred": 0.5487673115,
+          "actual": 0.6463414634,
+          "model": "Gradient boosting"
+        },
+        {
+          "b": {
+            "closed": "right",
+            "closed_left": false,
+            "closed_right": true,
+            "is_empty": false,
+            "left": 0.6,
+            "length": 0.1,
+            "mid": 0.65,
+            "open_left": true,
+            "open_right": false,
+            "right": 0.7
+          },
+          "n": 45,
+          "mean_pred": 0.6480348272,
+          "actual": 0.8444444444,
+          "model": "Gradient boosting"
+        },
+        {
+          "b": {
+            "closed": "right",
+            "closed_left": false,
+            "closed_right": true,
+            "is_empty": false,
+            "left": 0.7,
+            "length": 0.1,
+            "mid": 0.75,
+            "open_left": true,
+            "open_right": false,
+            "right": 0.8
+          },
+          "n": 6,
+          "mean_pred": 0.7286072032,
+          "actual": 0.8333333333,
+          "model": "Gradient boosting"
+        },
+        {
+          "b": {
+            "closed": "right",
+            "closed_left": false,
+            "closed_right": true,
+            "is_empty": false,
+            "left": 0.8,
+            "length": 0.1,
+            "mid": 0.85,
+            "open_left": true,
+            "open_right": false,
+            "right": 0.9
+          },
+          "n": 0,
+          "mean_pred": null,
+          "actual": null,
+          "model": "Gradient boosting"
+        },
+        {
+          "b": {
+            "closed": "right",
+            "closed_left": false,
+            "closed_right": true,
+            "is_empty": false,
+            "left": 0.9,
+            "length": 0.1,
+            "mid": 0.95,
+            "open_left": true,
+            "open_right": false,
+            "right": 1.0
+          },
+          "n": 0,
+          "mean_pred": null,
+          "actual": null,
+          "model": "Gradient boosting"
+        },
+        {
+          "b": {
+            "closed": "right",
+            "closed_left": false,
+            "closed_right": true,
+            "is_empty": false,
+            "left": -0.001,
+            "length": 0.101,
+            "mid": 0.0495,
+            "open_left": true,
+            "open_right": false,
+            "right": 0.1
+          },
+          "n": 0,
+          "mean_pred": null,
+          "actual": null,
+          "model": "Rolling boosting"
+        },
+        {
+          "b": {
+            "closed": "right",
+            "closed_left": false,
+            "closed_right": true,
+            "is_empty": false,
+            "left": 0.1,
+            "length": 0.1,
+            "mid": 0.15,
+            "open_left": true,
+            "open_right": false,
+            "right": 0.2
+          },
+          "n": 0,
+          "mean_pred": null,
+          "actual": null,
+          "model": "Rolling boosting"
+        },
+        {
+          "b": {
+            "closed": "right",
+            "closed_left": false,
+            "closed_right": true,
+            "is_empty": false,
+            "left": 0.2,
+            "length": 0.1,
+            "mid": 0.25,
+            "open_left": true,
+            "open_right": false,
+            "right": 0.3
+          },
+          "n": 27,
+          "mean_pred": 0.2652738783,
+          "actual": 0.1851851852,
+          "model": "Rolling boosting"
+        },
+        {
+          "b": {
+            "closed": "right",
+            "closed_left": false,
+            "closed_right": true,
+            "is_empty": false,
+            "left": 0.3,
+            "length": 0.1,
+            "mid": 0.35,
+            "open_left": true,
+            "open_right": false,
+            "right": 0.4
+          },
+          "n": 25,
+          "mean_pred": 0.3455428431,
+          "actual": 0.28,
+          "model": "Rolling boosting"
+        },
+        {
+          "b": {
+            "closed": "right",
+            "closed_left": false,
+            "closed_right": true,
+            "is_empty": false,
+            "left": 0.4,
+            "length": 0.1,
+            "mid": 0.45,
+            "open_left": true,
+            "open_right": false,
+            "right": 0.5
+          },
+          "n": 37,
+          "mean_pred": 0.4527530254,
+          "actual": 0.4594594595,
+          "model": "Rolling boosting"
+        },
+        {
+          "b": {
+            "closed": "right",
+            "closed_left": false,
+            "closed_right": true,
+            "is_empty": false,
+            "left": 0.5,
+            "length": 0.1,
+            "mid": 0.55,
+            "open_left": true,
+            "open_right": false,
+            "right": 0.6
+          },
+          "n": 65,
+          "mean_pred": 0.5500293053,
+          "actual": 0.6461538462,
+          "model": "Rolling boosting"
+        },
+        {
+          "b": {
+            "closed": "right",
+            "closed_left": false,
+            "closed_right": true,
+            "is_empty": false,
+            "left": 0.6,
+            "length": 0.1,
+            "mid": 0.65,
+            "open_left": true,
+            "open_right": false,
+            "right": 0.7
+          },
+          "n": 55,
+          "mean_pred": 0.6470208618,
+          "actual": 0.8181818182,
+          "model": "Rolling boosting"
+        },
+        {
+          "b": {
+            "closed": "right",
+            "closed_left": false,
+            "closed_right": true,
+            "is_empty": false,
+            "left": 0.7,
+            "length": 0.1,
+            "mid": 0.75,
+            "open_left": true,
+            "open_right": false,
+            "right": 0.8
+          },
+          "n": 6,
+          "mean_pred": 0.7233947935,
+          "actual": 0.8333333333,
+          "model": "Rolling boosting"
+        },
+        {
+          "b": {
+            "closed": "right",
+            "closed_left": false,
+            "closed_right": true,
+            "is_empty": false,
+            "left": 0.8,
+            "length": 0.1,
+            "mid": 0.85,
+            "open_left": true,
+            "open_right": false,
+            "right": 0.9
+          },
+          "n": 0,
+          "mean_pred": null,
+          "actual": null,
+          "model": "Rolling boosting"
+        },
+        {
+          "b": {
+            "closed": "right",
+            "closed_left": false,
+            "closed_right": true,
+            "is_empty": false,
+            "left": 0.9,
+            "length": 0.1,
+            "mid": 0.95,
+            "open_left": true,
+            "open_right": false,
+            "right": 1.0
+          },
+          "n": 0,
+          "mean_pred": null,
+          "actual": null,
+          "model": "Rolling boosting"
+        },
+        {
+          "b": {
+            "closed": "right",
+            "closed_left": false,
+            "closed_right": true,
+            "is_empty": false,
+            "left": -0.001,
+            "length": 0.101,
+            "mid": 0.0495,
+            "open_left": true,
+            "open_right": false,
+            "right": 0.1
+          },
+          "n": 2,
+          "mean_pred": 0.0827842429,
+          "actual": 0.5,
+          "model": "Elo blend"
+        },
+        {
+          "b": {
+            "closed": "right",
+            "closed_left": false,
+            "closed_right": true,
+            "is_empty": false,
+            "left": 0.1,
+            "length": 0.1,
+            "mid": 0.15,
+            "open_left": true,
+            "open_right": false,
+            "right": 0.2
+          },
+          "n": 14,
+          "mean_pred": 0.1542923068,
+          "actual": 0.1428571429,
+          "model": "Elo blend"
+        },
+        {
+          "b": {
+            "closed": "right",
+            "closed_left": false,
+            "closed_right": true,
+            "is_empty": false,
+            "left": 0.2,
+            "length": 0.1,
+            "mid": 0.25,
+            "open_left": true,
+            "open_right": false,
+            "right": 0.3
+          },
+          "n": 19,
+          "mean_pred": 0.2611921933,
+          "actual": 0.4210526316,
+          "model": "Elo blend"
+        },
+        {
+          "b": {
+            "closed": "right",
+            "closed_left": false,
+            "closed_right": true,
+            "is_empty": false,
+            "left": 0.3,
+            "length": 0.1,
+            "mid": 0.35,
+            "open_left": true,
+            "open_right": false,
+            "right": 0.4
+          },
+          "n": 29,
+          "mean_pred": 0.3563606593,
+          "actual": 0.3793103448,
+          "model": "Elo blend"
+        },
+        {
+          "b": {
+            "closed": "right",
+            "closed_left": false,
+            "closed_right": true,
+            "is_empty": false,
+            "left": 0.4,
+            "length": 0.1,
+            "mid": 0.45,
+            "open_left": true,
+            "open_right": false,
+            "right": 0.5
+          },
+          "n": 43,
+          "mean_pred": 0.4556155574,
+          "actual": 0.3720930233,
+          "model": "Elo blend"
+        },
+        {
+          "b": {
+            "closed": "right",
+            "closed_left": false,
+            "closed_right": true,
+            "is_empty": false,
+            "left": 0.5,
+            "length": 0.1,
+            "mid": 0.55,
+            "open_left": true,
+            "open_right": false,
+            "right": 0.6
+          },
+          "n": 42,
+          "mean_pred": 0.550850668,
+          "actual": 0.5952380952,
+          "model": "Elo blend"
+        },
+        {
+          "b": {
+            "closed": "right",
+            "closed_left": false,
+            "closed_right": true,
+            "is_empty": false,
+            "left": 0.6,
+            "length": 0.1,
+            "mid": 0.65,
+            "open_left": true,
+            "open_right": false,
+            "right": 0.7
+          },
+          "n": 37,
+          "mean_pred": 0.6563491881,
+          "actual": 0.8378378378,
+          "model": "Elo blend"
+        },
+        {
+          "b": {
+            "closed": "right",
+            "closed_left": false,
+            "closed_right": true,
+            "is_empty": false,
+            "left": 0.7,
+            "length": 0.1,
+            "mid": 0.75,
+            "open_left": true,
+            "open_right": false,
+            "right": 0.8
+          },
+          "n": 22,
+          "mean_pred": 0.7623581777,
+          "actual": 0.9090909091,
+          "model": "Elo blend"
+        },
+        {
+          "b": {
+            "closed": "right",
+            "closed_left": false,
+            "closed_right": true,
+            "is_empty": false,
+            "left": 0.8,
+            "length": 0.1,
+            "mid": 0.85,
+            "open_left": true,
+            "open_right": false,
+            "right": 0.9
+          },
+          "n": 7,
+          "mean_pred": 0.830119845,
+          "actual": 1.0,
+          "model": "Elo blend"
+        },
+        {
+          "b": {
+            "closed": "right",
+            "closed_left": false,
+            "closed_right": true,
+            "is_empty": false,
+            "left": 0.9,
+            "length": 0.1,
+            "mid": 0.95,
+            "open_left": true,
+            "open_right": false,
+            "right": 1.0
+          },
+          "n": 0,
+          "mean_pred": null,
+          "actual": null,
+          "model": "Elo blend"
+        }
+      ]
+    },
+    "08_duration_regression": {
+      "usable_matches": 2443,
+      "metrics": [
+        {
+          "model": "RF",
+          "MAE": 28.460051516339842,
+          "RMSE": 34.06146362474902,
+          "R2": -0.14373360913038846
+        },
+        {
+          "model": "GB",
+          "MAE": 27.96968170784187,
+          "RMSE": 33.457684401714644,
+          "R2": -0.10354496173615879
+        }
+      ]
+    },
+    "09_clustering": {
+      "k_scores": [
+        {
+          "k": 2,
+          "silhouette": 0.21653012549817507
+        },
+        {
+          "k": 3,
+          "silhouette": 0.1953733126169648
+        },
+        {
+          "k": 4,
+          "silhouette": 0.17616056000949343
+        },
+        {
+          "k": 5,
+          "silhouette": 0.1712701689043709
+        },
+        {
+          "k": 6,
+          "silhouette": 0.14367016527349818
+        }
+      ],
+      "chosen_k": 2,
+      "profiles": [
+        {
+          "cluster": 0,
+          "ht": 192.08,
+          "winpct": 0.5738869311,
+          "ace100": 10.5241258482,
+          "df100": 3.3759971762,
+          "firstin": 0.6303838082,
+          "firstwon": 0.7488678865,
+          "secondwon": 0.5236642208,
+          "bpsave": 0.6514394843,
+          "matches": 47.8
+        },
+        {
+          "cluster": 1,
+          "ht": 183.4430379747,
+          "winpct": 0.4336593597,
+          "ace100": 6.6974512364,
+          "df100": 3.7369566816,
+          "firstin": 0.6153944337,
+          "firstwon": 0.7016841539,
+          "secondwon": 0.4975013099,
+          "bpsave": 0.6017210301,
+          "matches": 32.8987341772
+        }
+      ]
+    },
+    "10_pca": {
+      "explained": [
+        0.3976895089441497,
+        0.23456407221067477
+      ],
+      "loadings": [
+        {
+          "feature": "ht",
+          "PC1": 0.4261439895,
+          "PC2": 0.1657304942
+        },
+        {
+          "feature": "winpct",
+          "PC1": 0.3359195677,
+          "PC2": -0.2881098895
+        },
+        {
+          "feature": "ace100",
+          "PC1": 0.461759513,
+          "PC2": 0.2915977564
+        },
+        {
+          "feature": "df100",
+          "PC1": -0.0135897049,
+          "PC2": 0.5847236539
+        },
+        {
+          "feature": "firstin",
+          "PC1": 0.0795536491,
+          "PC2": -0.4214818435
+        },
+        {
+          "feature": "firstwon",
+          "PC1": 0.4912938847,
+          "PC2": 0.222145309
+        },
+        {
+          "feature": "secondwon",
+          "PC1": 0.2832709549,
+          "PC2": -0.474300031
+        },
+        {
+          "feature": "bpsave",
+          "PC1": 0.4052306975,
+          "PC2": -0.1031459641
+        }
+      ],
+      "extremes": [
+        {
+          "name": "Sebastian Baez",
+          "matches": 41,
+          "PC1": -4.1874746773,
+          "PC2": -2.2787211952,
+          "which": "low PC1"
+        },
+        {
+          "name": "Hugo Gaston",
+          "matches": 27,
+          "PC1": -3.524127799,
+          "PC2": 0.4461926566,
+          "which": "low PC1"
+        },
+        {
+          "name": "Pedro Martinez",
+          "matches": 44,
+          "PC1": -3.4950212987,
+          "PC2": -0.5203915976,
+          "which": "low PC1"
+        },
+        {
+          "name": "Dusan Lajovic",
+          "matches": 17,
+          "PC1": -3.2998138286,
+          "PC2": -1.0760758922,
+          "which": "low PC1"
+        },
+        {
+          "name": "Damir Dzumhur",
+          "matches": 48,
+          "PC1": -2.8786949856,
+          "PC2": -2.6029010919,
+          "which": "low PC1"
+        },
+        {
+          "name": "Daniel Evans",
+          "matches": 13,
+          "PC1": -2.8719626116,
+          "PC2": 0.4290827564,
+          "which": "low PC1"
+        },
+        {
+          "name": "Rinky Hijikata",
+          "matches": 26,
+          "PC1": -2.7771047577,
+          "PC2": -0.3123219628,
+          "which": "low PC1"
+        },
+        {
+          "name": "Reilly Opelka",
+          "matches": 49,
+          "PC1": 5.1310906063,
+          "PC2": 2.163375245,
+          "which": "high PC1"
+        },
+        {
+          "name": "Jannik Sinner",
+          "matches": 64,
+          "PC1": 4.3520865511,
+          "PC2": -2.7245273184,
+          "which": "high PC1"
+        },
+        {
+          "name": "Taylor Fritz",
+          "matches": 76,
+          "PC1": 4.0323798681,
+          "PC2": -0.725342639,
+          "which": "high PC1"
+        },
+        {
+          "name": "Giovanni Mpetshi Perricard",
+          "matches": 45,
+          "PC1": 3.9328897377,
+          "PC2": 1.0914057286,
+          "which": "high PC1"
+        },
+        {
+          "name": "Hubert Hurkacz",
+          "matches": 27,
+          "PC1": 3.3913141468,
+          "PC2": -0.5717581313,
+          "which": "high PC1"
+        },
+        {
+          "name": "Alexander Bublik",
+          "matches": 59,
+          "PC1": 3.2563873094,
+          "PC2": 2.6362451834,
+          "which": "high PC1"
+        },
+        {
+          "name": "Felix Auger Aliassime",
+          "matches": 75,
+          "PC1": 3.001205816,
+          "PC2": -0.2812987728,
+          "which": "high PC1"
+        },
+        {
+          "name": "Jannik Sinner",
+          "matches": 64,
+          "PC1": 4.3520865511,
+          "PC2": -2.7245273184,
+          "which": "low PC2"
+        },
+        {
+          "name": "Damir Dzumhur",
+          "matches": 48,
+          "PC1": -2.8786949856,
+          "PC2": -2.6029010919,
+          "which": "low PC2"
+        },
+        {
+          "name": "Carlos Alcaraz",
+          "matches": 80,
+          "PC1": 2.0846436449,
+          "PC2": -2.3846568713,
+          "which": "low PC2"
+        },
+        {
+          "name": "Lorenzo Musetti",
+          "matches": 68,
+          "PC1": 0.4051465645,
+          "PC2": -2.3402916851,
+          "which": "low PC2"
+        },
+        {
+          "name": "Sebastian Baez",
+          "matches": 41,
+          "PC1": -4.1874746773,
+          "PC2": -2.2787211952,
+          "which": "low PC2"
+        },
+        {
+          "name": "Alejandro Davidovich Fokina",
+          "matches": 70,
+          "PC1": -0.3070139981,
+          "PC2": -2.2228765983,
+          "which": "low PC2"
+        },
+        {
+          "name": "Alexander Zverev",
+          "matches": 83,
+          "PC1": 2.3092589067,
+          "PC2": -2.0831544854,
+          "which": "low PC2"
+        },
+        {
+          "name": "Raphael Collignon",
+          "matches": 20,
+          "PC1": -0.3907970783,
+          "PC2": 3.7852677812,
+          "which": "high PC2"
+        },
+        {
+          "name": "Jaime Faria",
+          "matches": 15,
+          "PC1": -1.3003109732,
+          "PC2": 3.3131467859,
+          "which": "high PC2"
+        },
+        {
+          "name": "Terence Atmane",
+          "matches": 17,
+          "PC1": -0.2603461589,
+          "PC2": 3.237628518,
+          "which": "high PC2"
+        },
+        {
+          "name": "Denis Shapovalov",
+          "matches": 48,
+          "PC1": -0.1498238522,
+          "PC2": 2.7428525386,
+          "which": "high PC2"
+        },
+        {
+          "name": "Jacob Fearnley",
+          "matches": 37,
+          "PC1": -1.6658243943,
+          "PC2": 2.6767734984,
+          "which": "high PC2"
+        },
+        {
+          "name": "Alexander Bublik",
+          "matches": 59,
+          "PC1": 3.2563873094,
+          "PC2": 2.6362451834,
+          "which": "high PC2"
+        },
+        {
+          "name": "Quentin Halys",
+          "matches": 36,
+          "PC1": 0.9878566329,
+          "PC2": 2.6169966723,
+          "which": "high PC2"
+        }
+      ]
+    },
+    "11_neighbors": [
+      {
+        "player": "Alexander Zverev",
+        "neighbor_rank": 1,
+        "neighbor": "Gabriel Diallo",
+        "distance": 2.3092879046
+      },
+      {
+        "player": "Alexander Zverev",
+        "neighbor_rank": 2,
+        "neighbor": "Matteo Berrettini",
+        "distance": 2.316660506
+      },
+      {
+        "player": "Alexander Zverev",
+        "neighbor_rank": 3,
+        "neighbor": "Novak Djokovic",
+        "distance": 2.5208036813
+      },
+      {
+        "player": "Alexander Zverev",
+        "neighbor_rank": 4,
+        "neighbor": "Valentin Vacherot",
+        "distance": 2.5310836849
+      },
+      {
+        "player": "Alexander Zverev",
+        "neighbor_rank": 5,
+        "neighbor": "Felix Auger Aliassime",
+        "distance": 2.6680294794
+      },
+      {
+        "player": "Novak Djokovic",
+        "neighbor_rank": 1,
+        "neighbor": "Jack Draper",
+        "distance": 1.4257154533
+      },
+      {
+        "player": "Novak Djokovic",
+        "neighbor_rank": 2,
+        "neighbor": "Casper Ruud",
+        "distance": 1.9022901407
+      },
+      {
+        "player": "Novak Djokovic",
+        "neighbor_rank": 3,
+        "neighbor": "Valentin Vacherot",
+        "distance": 2.0172432096
+      },
+      {
+        "player": "Novak Djokovic",
+        "neighbor_rank": 4,
+        "neighbor": "Carlos Alcaraz",
+        "distance": 2.0477238531
+      },
+      {
+        "player": "Novak Djokovic",
+        "neighbor_rank": 5,
+        "neighbor": "Jiri Lehecka",
+        "distance": 2.1274746675
+      },
+      {
+        "player": "Taylor Fritz",
+        "neighbor_rank": 1,
+        "neighbor": "Hubert Hurkacz",
+        "distance": 1.4649463109
+      },
+      {
+        "player": "Taylor Fritz",
+        "neighbor_rank": 2,
+        "neighbor": "Matteo Berrettini",
+        "distance": 1.9282881841
+      },
+      {
+        "player": "Taylor Fritz",
+        "neighbor_rank": 3,
+        "neighbor": "Ben Shelton",
+        "distance": 1.9351176789
+      },
+      {
+        "player": "Taylor Fritz",
+        "neighbor_rank": 4,
+        "neighbor": "Coleman Wong",
+        "distance": 1.9753822451
+      },
+      {
+        "player": "Taylor Fritz",
+        "neighbor_rank": 5,
+        "neighbor": "Felix Auger Aliassime",
+        "distance": 1.9904727755
+      },
+      {
+        "player": "Alex De Minaur",
+        "neighbor_rank": 1,
+        "neighbor": "Tommy Paul",
+        "distance": 2.1951484148
+      },
+      {
+        "player": "Alex De Minaur",
+        "neighbor_rank": 2,
+        "neighbor": "Flavio Cobolli",
+        "distance": 2.3587277565
+      },
+      {
+        "player": "Alex De Minaur",
+        "neighbor_rank": 3,
+        "neighbor": "Arthur Fils",
+        "distance": 2.6776526324
+      },
+      {
+        "player": "Alex De Minaur",
+        "neighbor_rank": 4,
+        "neighbor": "Holger Rune",
+        "distance": 2.6883265081
+      },
+      {
+        "player": "Alex De Minaur",
+        "neighbor_rank": 5,
+        "neighbor": "Ugo Humbert",
+        "distance": 2.7205886462
+      },
+      {
+        "player": "Jannik Sinner",
+        "neighbor_rank": 1,
+        "neighbor": "Carlos Alcaraz",
+        "distance": 2.8790017975
+      },
+      {
+        "player": "Jannik Sinner",
+        "neighbor_rank": 2,
+        "neighbor": "Novak Djokovic",
+        "distance": 3.0583041448
+      },
+      {
+        "player": "Jannik Sinner",
+        "neighbor_rank": 3,
+        "neighbor": "Jack Draper",
+        "distance": 3.1622619717
+      },
+      {
+        "player": "Jannik Sinner",
+        "neighbor_rank": 4,
+        "neighbor": "Taylor Fritz",
+        "distance": 3.3111510606
+      },
+      {
+        "player": "Jannik Sinner",
+        "neighbor_rank": 5,
+        "neighbor": "Ben Shelton",
+        "distance": 3.6245794158
+      },
+      {
+        "player": "Jack Draper",
+        "neighbor_rank": 1,
+        "neighbor": "Ben Shelton",
+        "distance": 1.3258479752
+      },
+      {
+        "player": "Jack Draper",
+        "neighbor_rank": 2,
+        "neighbor": "Valentin Vacherot",
+        "distance": 1.3840905981
+      },
+      {
+        "player": "Jack Draper",
+        "neighbor_rank": 3,
+        "neighbor": "Novak Djokovic",
+        "distance": 1.4257154533
+      },
+      {
+        "player": "Jack Draper",
+        "neighbor_rank": 4,
+        "neighbor": "Jiri Lehecka",
+        "distance": 1.7873973052
+      },
+      {
+        "player": "Jack Draper",
+        "neighbor_rank": 5,
+        "neighbor": "Ugo Humbert",
+        "distance": 1.9526954068
+      },
+      {
+        "player": "Carlos Alcaraz",
+        "neighbor_rank": 1,
+        "neighbor": "Novak Djokovic",
+        "distance": 2.0477238531
+      },
+      {
+        "player": "Carlos Alcaraz",
+        "neighbor_rank": 2,
+        "neighbor": "Casper Ruud",
+        "distance": 2.1820750283
+      },
+      {
+        "player": "Carlos Alcaraz",
+        "neighbor_rank": 3,
+        "neighbor": "Jack Draper",
+        "distance": 2.329738328
+      },
+      {
+        "player": "Carlos Alcaraz",
+        "neighbor_rank": 4,
+        "neighbor": "Valentin Vacherot",
+        "distance": 2.4488742469
+      },
+      {
+        "player": "Carlos Alcaraz",
+        "neighbor_rank": 5,
+        "neighbor": "Lorenzo Musetti",
+        "distance": 2.5892645306
+      },
+      {
+        "player": "Ben Shelton",
+        "neighbor_rank": 1,
+        "neighbor": "Jack Draper",
+        "distance": 1.3258479752
+      },
+      {
+        "player": "Ben Shelton",
+        "neighbor_rank": 2,
+        "neighbor": "Felix Auger Aliassime",
+        "distance": 1.4286186749
+      },
+      {
+        "player": "Ben Shelton",
+        "neighbor_rank": 3,
+        "neighbor": "Sebastian Korda",
+        "distance": 1.7670333513
+      },
+      {
+        "player": "Ben Shelton",
+        "neighbor_rank": 4,
+        "neighbor": "Tallon Griekspoor",
+        "distance": 1.8775611129
+      },
+      {
+        "player": "Ben Shelton",
+        "neighbor_rank": 5,
+        "neighbor": "Taylor Fritz",
+        "distance": 1.9351176789
+      }
+    ],
+    "12_anomalies": [
+      {
+        "date": "2025-06-30T00:00:00.000",
+        "tourney_name": "Wimbledon",
+        "surface": "Grass",
+        "winner_name": "August Holmgren",
+        "loser_name": "Tomas Machac",
+        "score": "7-6(5) 6-7(8) 6-7(5) 7-5 7-6(5)",
+        "minutes": 279.0,
+        "rankgap": 169.0,
+        "aces": 54.0,
+        "dfs": 21.0,
+        "score_anom": 0.765949026
+      },
+      {
+        "date": "2025-08-25T00:00:00.000",
+        "tourney_name": "Us Open",
+        "surface": "Hard",
+        "winner_name": "Daniel Altmaier",
+        "loser_name": "Hamad Medjedovic",
+        "score": "7-5 6-7(3) 7-6(7) 6-7(5) 6-4",
+        "minutes": 286.0,
+        "rankgap": 1.0,
+        "aces": 52.0,
+        "dfs": 14.0,
+        "score_anom": 0.7424821745
+      },
+      {
+        "date": "2025-06-30T00:00:00.000",
+        "tourney_name": "Wimbledon",
+        "surface": "Grass",
+        "winner_name": "Jesper De Jong",
+        "loser_name": "Christopher Eubanks",
+        "score": "6-3 6-7(5) 6-7(7) 6-3 7-6(3)",
+        "minutes": 269.0,
+        "rankgap": 24.0,
+        "aces": 49.0,
+        "dfs": 22.0,
+        "score_anom": 0.741245346
+      },
+      {
+        "date": "2025-08-25T00:00:00.000",
+        "tourney_name": "Us Open",
+        "surface": "Hard",
+        "winner_name": "Ugo Blanchet",
+        "loser_name": "Jakub Mensik",
+        "score": "6-7(2) 7-6(5) 3-6 6-4 7-6(7)",
+        "minutes": 263.0,
+        "rankgap": 168.0,
+        "aces": 42.0,
+        "dfs": 22.0,
+        "score_anom": 0.739552586
+      },
+      {
+        "date": "2025-01-13T00:00:00.000",
+        "tourney_name": "Australian Open",
+        "surface": "Hard",
+        "winner_name": "Tomas Machac",
+        "loser_name": "Reilly Opelka",
+        "score": "3-6 7-6(1) 6-7(5) 7-6(4) 6-4",
+        "minutes": 205.0,
+        "rankgap": 145.0,
+        "aces": 56.0,
+        "dfs": 23.0,
+        "score_anom": 0.7359087618
+      },
+      {
+        "date": "2025-08-25T00:00:00.000",
+        "tourney_name": "Us Open",
+        "surface": "Hard",
+        "winner_name": "Jerome Kym",
+        "loser_name": "Brandon Nakashima",
+        "score": "4-6 7-6(2) 7-5 3-6 7-6(8)",
+        "minutes": 260.0,
+        "rankgap": 144.0,
+        "aces": 50.0,
+        "dfs": 14.0,
+        "score_anom": 0.7264959526
+      },
+      {
+        "date": "2025-06-30T00:00:00.000",
+        "tourney_name": "Wimbledon",
+        "surface": "Grass",
+        "winner_name": "Cameron Norrie",
+        "loser_name": "Nicolas Jarry",
+        "score": "6-3 7-6(4) 6-7(7) 6-7(5) 6-3",
+        "minutes": 267.0,
+        "rankgap": 82.0,
+        "aces": 54.0,
+        "dfs": 14.0,
+        "score_anom": 0.7259779576
+      },
+      {
+        "date": "2025-06-30T00:00:00.000",
+        "tourney_name": "Wimbledon",
+        "surface": "Grass",
+        "winner_name": "Arthur Rinderknech",
+        "loser_name": "Alexander Zverev",
+        "score": "7-6(3) 6-7(8) 6-3 6-7(5) 6-4",
+        "minutes": 280.0,
+        "rankgap": 69.0,
+        "aces": 56.0,
+        "dfs": 8.0,
+        "score_anom": 0.7241154874
+      },
+      {
+        "date": "2025-01-13T00:00:00.000",
+        "tourney_name": "Australian Open",
+        "surface": "Hard",
+        "winner_name": "Gael Monfils",
+        "loser_name": "Giovanni Mpetshi Perricard",
+        "score": "7-6(7) 6-3 6-7(6) 6-7(5) 6-4",
+        "minutes": 226.0,
+        "rankgap": 11.0,
+        "aces": 37.0,
+        "dfs": 25.0,
+        "score_anom": 0.7147415531
+      },
+      {
+        "date": "2025-06-30T00:00:00.000",
+        "tourney_name": "Wimbledon",
+        "surface": "Grass",
+        "winner_name": "Lorenzo Sonego",
+        "loser_name": "Brandon Nakashima",
+        "score": "6-7(5) 7-6(8) 7-6(2) 3-6 7-6(3)",
+        "minutes": 304.0,
+        "rankgap": 13.0,
+        "aces": 32.0,
+        "dfs": 2.0,
+        "score_anom": 0.7131049519
+      },
+      {
+        "date": "2025-06-30T00:00:00.000",
+        "tourney_name": "Wimbledon",
+        "surface": "Grass",
+        "winner_name": "Taylor Fritz",
+        "loser_name": "Giovanni Mpetshi Perricard",
+        "score": "6-7(6) 6-7(8) 6-4 7-6(6) 6-4",
+        "minutes": 205.0,
+        "rankgap": 31.0,
+        "aces": 66.0,
+        "dfs": 15.0,
+        "score_anom": 0.7046916638
+      },
+      {
+        "date": "2025-08-25T00:00:00.000",
+        "tourney_name": "Us Open",
+        "surface": "Hard",
+        "winner_name": "Kamil Majchrzak",
+        "loser_name": "Karen Khachanov",
+        "score": "2-6 6-7(4) 6-4 7-5 7-6(5)",
+        "minutes": 271.0,
+        "rankgap": 67.0,
+        "aces": 36.0,
+        "dfs": 17.0,
+        "score_anom": 0.704508431
+      },
+      {
+        "date": "2025-06-30T00:00:00.000",
+        "tourney_name": "Wimbledon",
+        "surface": "Grass",
+        "winner_name": "Lloyd Harris",
+        "loser_name": "Zizou Bergs",
+        "score": "7-6(7) 7-6(2) 6-7(5) 6-2",
+        "minutes": 246.0,
+        "rankgap": 270.0,
+        "aces": 32.0,
+        "dfs": 21.0,
+        "score_anom": 0.6996148142
+      },
+      {
+        "date": "2025-01-13T00:00:00.000",
+        "tourney_name": "Australian Open",
+        "surface": "Hard",
+        "winner_name": "Frances Tiafoe",
+        "loser_name": "Arthur Rinderknech",
+        "score": "7-6(2) 6-3 4-6 6-7(4) 6-3",
+        "minutes": 248.0,
+        "rankgap": 45.0,
+        "aces": 47.0,
+        "dfs": 18.0,
+        "score_anom": 0.6987737213
+      },
+      {
+        "date": "2025-05-26T00:00:00.000",
+        "tourney_name": "Roland Garros",
+        "surface": "Clay",
+        "winner_name": "Carlos Alcaraz",
+        "loser_name": "Jannik Sinner",
+        "score": "4-6 6-7(4) 6-4 7-6(3) 7-6(2)",
+        "minutes": 329.0,
+        "rankgap": 1.0,
+        "aces": 15.0,
+        "dfs": 7.0,
+        "score_anom": 0.6942366628
+      },
+      {
+        "date": "2025-06-30T00:00:00.000",
+        "tourney_name": "Wimbledon",
+        "surface": "Grass",
+        "winner_name": "Carlos Alcaraz",
+        "loser_name": "Fabio Fognini",
+        "score": "7-5 6-7(5) 7-5 2-6 6-1",
+        "minutes": 277.0,
+        "rankgap": 136.0,
+        "aces": 15.0,
+        "dfs": 18.0,
+        "score_anom": 0.6931427078
+      },
+      {
+        "date": "2025-01-13T00:00:00.000",
+        "tourney_name": "Australian Open",
+        "surface": "Hard",
+        "winner_name": "Jack Draper",
+        "loser_name": "Aleksandar Vukic",
+        "score": "6-4 2-6 5-7 7-6(5) 7-6(8)",
+        "minutes": 238.0,
+        "rankgap": 50.0,
+        "aces": 51.0,
+        "dfs": 10.0,
+        "score_anom": 0.6924617104
+      },
+      {
+        "date": "2025-01-13T00:00:00.000",
+        "tourney_name": "Australian Open",
+        "surface": "Hard",
+        "winner_name": "Learner Tien",
+        "loser_name": "Daniil Medvedev",
+        "score": "6-3 7-6(4) 6-7(8) 1-6 7-6(7)",
+        "minutes": 288.0,
+        "rankgap": 116.0,
+        "aces": 27.0,
+        "dfs": 13.0,
+        "score_anom": 0.6857447701
+      },
+      {
+        "date": "2025-01-13T00:00:00.000",
+        "tourney_name": "Australian Open",
+        "surface": "Hard",
+        "winner_name": "Gabriel Diallo",
+        "loser_name": "Luca Nardi",
+        "score": "6-7(1) 7-6(3) 5-7 6-1 6-2",
+        "minutes": 249.0,
+        "rankgap": 3.0,
+        "aces": 30.0,
+        "dfs": 21.0,
+        "score_anom": 0.6825356026
+      },
+      {
+        "date": "2025-01-13T00:00:00.000",
+        "tourney_name": "Australian Open",
+        "surface": "Hard",
+        "winner_name": "Learner Tien",
+        "loser_name": "Camilo Ugo Carabelli",
+        "score": "4-6 7-6(3) 6-3 5-7 6-4",
+        "minutes": 236.0,
+        "rankgap": 27.0,
+        "aces": 17.0,
+        "dfs": 25.0,
+        "score_anom": 0.6823565823
+      },
+      {
+        "date": "2025-01-13T00:00:00.000",
+        "tourney_name": "Australian Open",
+        "surface": "Hard",
+        "winner_name": "Fabian Marozsan",
+        "loser_name": "Thiago Seyboth Wild",
+        "score": "6-3 6-7(5) 7-5 5-7 7-5",
+        "minutes": 236.0,
+        "rankgap": 20.0,
+        "aces": 43.0,
+        "dfs": 7.0,
+        "score_anom": 0.6818917839
+      },
+      {
+        "date": "2025-08-25T00:00:00.000",
+        "tourney_name": "Us Open",
+        "surface": "Hard",
+        "winner_name": "Leandro Riedi",
+        "loser_name": "Francisco Cerundolo",
+        "score": "3-6 4-6 6-4 6-4 6-2",
+        "minutes": 215.0,
+        "rankgap": 416.0,
+        "aces": 19.0,
+        "dfs": 19.0,
+        "score_anom": 0.6799208384
+      },
+      {
+        "date": "2025-06-30T00:00:00.000",
+        "tourney_name": "Wimbledon",
+        "surface": "Grass",
+        "winner_name": "Gael Monfils",
+        "loser_name": "Ugo Humbert",
+        "score": "6-4 3-6 6-7(5) 7-5 6-2",
+        "minutes": 237.0,
+        "rankgap": 30.0,
+        "aces": 38.0,
+        "dfs": 21.0,
+        "score_anom": 0.6758078122
+      },
+      {
+        "date": "2025-08-25T00:00:00.000",
+        "tourney_name": "Us Open",
+        "surface": "Hard",
+        "winner_name": "Flavio Cobolli",
+        "loser_name": "Jenson Brooksby",
+        "score": "5-7 6-3 6-4 2-6 7-6(3)",
+        "minutes": 272.0,
+        "rankgap": 66.0,
+        "aces": 9.0,
+        "dfs": 14.0,
+        "score_anom": 0.6737388936
+      },
+      {
+        "date": "2025-08-25T00:00:00.000",
+        "tourney_name": "Us Open",
+        "surface": "Hard",
+        "winner_name": "Flavio Cobolli",
+        "loser_name": "Francesco Passaro",
+        "score": "7-5 4-6 6-4 3-6 6-3",
+        "minutes": 222.0,
+        "rankgap": 94.0,
+        "aces": 22.0,
+        "dfs": 27.0,
+        "score_anom": 0.6727478563
+      }
+    ],
+    "13_importance": [
+      {
+        "feature": "points_adv",
+        "damage": 0.0556511745,
+        "sd": 0.0097326815
+      },
+      {
+        "feature": "rank_adv",
+        "damage": 0.0338636936,
+        "sd": 0.0059284509
+      },
+      {
+        "feature": "ht_diff",
+        "damage": 0.0024412552,
+        "sd": 0.0012025275
+      },
+      {
+        "feature": "level",
+        "damage": 0.0019841758,
+        "sd": 0.0009032468
+      },
+      {
+        "feature": "hand",
+        "damage": 0.0017239258,
+        "sd": 0.0012474879
+      },
+      {
+        "feature": "age_diff",
+        "damage": 0.0002689596,
+        "sd": 0.0029806289
+      },
+      {
+        "feature": "best_of",
+        "damage": 0.0001023518,
+        "sd": 0.0003085237
+      },
+      {
+        "feature": "surface",
+        "damage": -1.33226763e-16,
+        "sd": 1.087791964e-16
+      },
+      {
+        "feature": "round",
+        "damage": -0.0006111084,
+        "sd": 0.0017633426
+      }
+    ],
+    "14_leakage": [
+      {
+        "model": "honest",
+        "accuracy": 0.7116279069767442,
+        "log_loss": 0.6071792343893057,
+        "brier": 0.20833618220155445,
+        "auc": 0.7638913311060314
+      },
+      {
+        "model": "in-match stats",
+        "accuracy": 0.9116279069767442,
+        "log_loss": 0.27326309525473497,
+        "brier": 0.07752501222077912,
+        "auc": 0.9697116229998242
+      },
+      {
+        "model": "final-score features",
+        "accuracy": 1.0,
+        "log_loss": 0.00019718092996336424,
+        "brier": 1.2940974628360623e-06,
+        "auc": 1.0
+      }
+    ],
+    "15_time_series": {
+      "rises": [
+        {
+          "name": "Carlos Alcaraz",
+          "matches": 80,
+          "change": 484.7699325204,
+          "start": 1545.0212984568,
+          "end": 2029.7912309772
+        },
+        {
+          "name": "Jannik Sinner",
+          "matches": 64,
+          "change": 461.0568420966,
+          "start": 1573.0593389999,
+          "end": 2034.1161810964
+        },
+        {
+          "name": "Felix Auger Aliassime",
+          "matches": 75,
+          "change": 379.0891738557,
+          "start": 1476.0,
+          "end": 1855.0891738557
+        },
+        {
+          "name": "Novak Djokovic",
+          "matches": 50,
+          "change": 313.0488031813,
+          "start": 1524.0,
+          "end": 1837.0488031813
+        },
+        {
+          "name": "Alex De Minaur",
+          "matches": 81,
+          "change": 283.5678107241,
+          "start": 1524.0,
+          "end": 1807.5678107241
+        },
+        {
+          "name": "Alexander Bublik",
+          "matches": 59,
+          "change": 277.4405504741,
+          "start": 1476.0,
+          "end": 1753.4405504741
+        },
+        {
+          "name": "Alexander Zverev",
+          "matches": 83,
+          "change": 261.973154899,
+          "start": 1547.8856616725,
+          "end": 1809.8588165715
+        },
+        {
+          "name": "Learner Tien",
+          "matches": 60,
+          "change": 259.836463106,
+          "start": 1476.0,
+          "end": 1735.836463106
+        },
+        {
+          "name": "Daniil Medvedev",
+          "matches": 66,
+          "change": 254.0022999728,
+          "start": 1498.4586025241,
+          "end": 1752.4609024969
+        },
+        {
+          "name": "Joao Fonseca",
+          "matches": 43,
+          "change": 233.6712615224,
+          "start": 1498.5582331958,
+          "end": 1732.2294947182
+        },
+        {
+          "name": "Taylor Fritz",
+          "matches": 76,
+          "change": 228.9292750932,
+          "start": 1525.6552293469,
+          "end": 1754.5845044401
+        },
+        {
+          "name": "Ben Shelton",
+          "matches": 65,
+          "change": 218.3876830931,
+          "start": 1479.1748097294,
+          "end": 1697.5624928225
+        }
+      ],
+      "falls": [
+        {
+          "name": "Aleksandar Kovacevic",
+          "matches": 36,
+          "change": -205.5392900259,
+          "start": 1543.5527401237,
+          "end": 1338.0134500978
+        },
+        {
+          "name": "Dusan Lajovic",
+          "matches": 17,
+          "change": -181.817863811,
+          "start": 1524.0,
+          "end": 1342.182136189
+        },
+        {
+          "name": "Quentin Halys",
+          "matches": 36,
+          "change": -152.1442223192,
+          "start": 1497.1383241911,
+          "end": 1344.9941018719
+        },
+        {
+          "name": "Pedro Martinez",
+          "matches": 44,
+          "change": -146.2472288519,
+          "start": 1524.0,
+          "end": 1377.7527711481
+        },
+        {
+          "name": "Hugo Gaston",
+          "matches": 27,
+          "change": -131.6165001712,
+          "start": 1507.474628596,
+          "end": 1375.8581284248
+        },
+        {
+          "name": "Chun Hsin Tseng",
+          "matches": 19,
+          "change": -121.4619825443,
+          "start": 1478.6278118719,
+          "end": 1357.1658293276
+        },
+        {
+          "name": "Mackenzie Mcdonald",
+          "matches": 27,
+          "change": -118.329382969,
+          "start": 1524.0,
+          "end": 1405.670617031
+        },
+        {
+          "name": "Jacob Fearnley",
+          "matches": 37,
+          "change": -113.3956008567,
+          "start": 1544.8268491428,
+          "end": 1431.4312482861
+        },
+        {
+          "name": "Gael Monfils",
+          "matches": 34,
+          "change": -109.5225544215,
+          "start": 1524.0,
+          "end": 1414.4774455785
+        },
+        {
+          "name": "Nicolas Jarry",
+          "matches": 27,
+          "change": -108.7602964725,
+          "start": 1524.0,
+          "end": 1415.2397035275
+        },
+        {
+          "name": "Sebastian Ofner",
+          "matches": 23,
+          "change": -102.8118220224,
+          "start": 1495.9348927925,
+          "end": 1393.1230707701
+        },
+        {
+          "name": "Jaime Faria",
+          "matches": 15,
+          "change": -101.9505557576,
+          "start": 1501.6699007616,
+          "end": 1399.719345004
+        }
+      ]
+    },
+    "16_rolling_form": {
+      "cv": [
+        {
+          "candidate": "(120, 0.03, 1)",
+          "cv_log_loss": 0.6444633884
+        },
+        {
+          "candidate": "(150, 0.03, 2)",
+          "cv_log_loss": 0.6535037654
+        },
+        {
+          "candidate": "(200, 0.04, 2)",
+          "cv_log_loss": 0.66288652
+        },
+        {
+          "candidate": "(120, 0.05, 3)",
+          "cv_log_loss": 0.6692451856
+        }
+      ],
+      "static": {
+        "model": "static GB",
+        "accuracy": 0.7116279069767442,
+        "log_loss": 0.6071792343893057,
+        "brier": 0.20833618220155445,
+        "auc": 0.7638913311060314
+      },
+      "rolling": {
+        "model": "rolling GB",
+        "accuracy": 0.7069767441860465,
+        "log_loss": 0.5979610453697132,
+        "brier": 0.20428185928652118,
+        "auc": 0.7718480745560049
+      }
+    },
+    "17_simulation": [
+      {
+        "player": "Jannik Sinner",
+        "rank": 2.0,
+        "QF%": 93.544,
+        "SF%": 81.606,
+        "F%": 69.622,
+        "Title%": 49.194
+      },
+      {
+        "player": "Carlos Alcaraz",
+        "rank": 1.0,
+        "QF%": 88.198,
+        "SF%": 65.286,
+        "F%": 50.38,
+        "Title%": 26.176
+      },
+      {
+        "player": "Novak Djokovic",
+        "rank": 5.0,
+        "QF%": 67.392,
+        "SF%": 49.296,
+        "F%": 19.724,
+        "Title%": 6.998
+      },
+      {
+        "player": "Felix Auger Aliassime",
+        "rank": 8.0,
+        "QF%": 62.032,
+        "SF%": 21.684,
+        "F%": 12.712,
+        "Title%": 4.332
+      },
+      {
+        "player": "Alexander Zverev",
+        "rank": 3.0,
+        "QF%": 56.658,
+        "SF%": 37.212,
+        "F%": 9.978,
+        "Title%": 3.7
+      },
+      {
+        "player": "Daniil Medvedev",
+        "rank": 13.0,
+        "QF%": 43.342,
+        "SF%": 25.85,
+        "F%": 5.75,
+        "Title%": 1.89
+      },
+      {
+        "player": "Taylor Fritz",
+        "rank": 6.0,
+        "QF%": 63.056,
+        "SF%": 11.558,
+        "F%": 5.842,
+        "Title%": 1.854
+      },
+      {
+        "player": "Alex De Minaur",
+        "rank": 7.0,
+        "QF%": 37.968,
+        "SF%": 9.7,
+        "F%": 4.602,
+        "Title%": 1.116
+      },
+      {
+        "player": "Alexander Bublik",
+        "rank": 13.0,
+        "QF%": 32.608,
+        "SF%": 18.266,
+        "F%": 4.606,
+        "Title%": 1.06
+      },
+      {
+        "player": "Jack Draper",
+        "rank": 5.0,
+        "QF%": 58.942,
+        "SF%": 20.658,
+        "F%": 4.882,
+        "Title%": 1.04
+      },
+      {
+        "player": "Lorenzo Musetti",
+        "rank": 9.0,
+        "QF%": 51.182,
+        "SF%": 19.126,
+        "F%": 3.314,
+        "Title%": 0.81
+      },
+      {
+        "player": "Ben Shelton",
+        "rank": 5.0,
+        "QF%": 48.818,
+        "SF%": 17.812,
+        "F%": 3.112,
+        "Title%": 0.772
+      },
+      {
+        "player": "Casper Ruud",
+        "rank": 9.0,
+        "QF%": 36.944,
+        "SF%": 4.67,
+        "F%": 1.75,
+        "Title%": 0.41
+      },
+      {
+        "player": "Holger Rune",
+        "rank": 11.0,
+        "QF%": 41.058,
+        "SF%": 11.78,
+        "F%": 2.018,
+        "Title%": 0.346
+      },
+      {
+        "player": "Tommy Paul",
+        "rank": 14.0,
+        "QF%": 11.802,
+        "SF%": 3.33,
+        "F%": 1.076,
+        "Title%": 0.188
+      },
+      {
+        "player": "Karen Khachanov",
+        "rank": 14.0,
+        "QF%": 6.456,
+        "SF%": 2.166,
+        "F%": 0.632,
+        "Title%": 0.114
+      }
+    ],
+    "18_upsets": {
+      "rate": 0.35736568457539,
+      "surface": [
+        {
+          "surface": "Clay",
+          "matches": 809,
+          "rate": 0.3547589617
+        },
+        {
+          "surface": "Grass",
+          "matches": 297,
+          "rate": 0.3703703704
+        },
+        {
+          "surface": "Hard",
+          "matches": 1779,
+          "rate": 0.3563799888
+        }
+      ],
+      "biggest": [
+        {
+          "date": "2025-01-31T00:00:00.000",
+          "tourney_name": "Davis Cup WG1 PO: COL vs BAR",
+          "surface": "Clay",
+          "winner_name": "Darian King",
+          "wr": 1869.0,
+          "loser_name": "Nicolas Mejia",
+          "lr": 214.0,
+          "score": "6-3 6-4",
+          "gap": 1655.0
+        },
+        {
+          "date": "2025-01-31T00:00:00.000",
+          "tourney_name": "Davis Cup WG2 PO: CYP vs THA",
+          "surface": "Clay",
+          "winner_name": "Stylianos Christodoulou",
+          "wr": 2068.0,
+          "loser_name": "Kasidit Samrej",
+          "lr": 423.0,
+          "score": "1-6 6-0 6-4",
+          "gap": 1645.0
+        },
+        {
+          "date": "2025-01-31T00:00:00.000",
+          "tourney_name": "Davis Cup WG1 PO: COL vs BAR",
+          "surface": "Clay",
+          "winner_name": "Darian King",
+          "wr": 1869.0,
+          "loser_name": "Adria Soriano Barrera",
+          "lr": 345.0,
+          "score": "6-2 6-4",
+          "gap": 1524.0
+        },
+        {
+          "date": "2025-01-31T00:00:00.000",
+          "tourney_name": "Davis Cup WG2 PO: CYP vs THA",
+          "surface": "Clay",
+          "winner_name": "Andreas Timini",
+          "wr": 2068.0,
+          "loser_name": "Thanapet Chanta",
+          "lr": 706.0,
+          "score": "6-3 6-3",
+          "gap": 1362.0
+        },
+        {
+          "date": "2025-01-31T00:00:00.000",
+          "tourney_name": "Davis Cup QLS R1: GER vs ISR",
+          "surface": "Hard",
+          "winner_name": "Ofek Shimanov ",
+          "wr": 1226.0,
+          "loser_name": "Daniel Masur",
+          "lr": 265.0,
+          "score": "6-7(2) 6-3 [10-8]",
+          "gap": 961.0
+        },
+        {
+          "date": "2025-03-05T00:00:00.000",
+          "tourney_name": "Indian Wells Masters",
+          "surface": "Hard",
+          "winner_name": "Jenson Brooksby",
+          "wr": 937.0,
+          "loser_name": "Felix Auger Aliassime",
+          "lr": 18.0,
+          "score": "6-4 6-2",
+          "gap": 919.0
+        },
+        {
+          "date": "2025-03-05T00:00:00.000",
+          "tourney_name": "Indian Wells Masters",
+          "surface": "Hard",
+          "winner_name": "Jenson Brooksby",
+          "wr": 937.0,
+          "loser_name": "Benjamin Bonzi",
+          "lr": 62.0,
+          "score": "1-6 7-5 7-5",
+          "gap": 875.0
+        },
+        {
+          "date": "2025-09-13T00:00:00.000",
+          "tourney_name": "Davis Cup WG1 R1: BUL vs FIN",
+          "surface": "Clay",
+          "winner_name": "Alexander Vasilev",
+          "wr": 992.0,
+          "loser_name": "Otto Virtanen",
+          "lr": 141.0,
+          "score": "6-3 7-5",
+          "gap": 851.0
+        },
+        {
+          "date": "2025-03-19T00:00:00.000",
+          "tourney_name": "Miami Masters",
+          "surface": "Hard",
+          "winner_name": "Nick Kyrgios",
+          "wr": 892.0,
+          "loser_name": "Mackenzie Mcdonald",
+          "lr": 101.0,
+          "score": "3-6 6-3 6-4",
+          "gap": 791.0
+        },
+        {
+          "date": "2025-02-01T00:00:00.000",
+          "tourney_name": "Davis Cup WG2 PO: RSA vs NGR",
+          "surface": "Hard",
+          "winner_name": "Christopher Bulus",
+          "wr": 1018.0,
+          "loser_name": "Kris Van Wyk",
+          "lr": 358.0,
+          "score": "3-6 6-3 7-6(4)",
+          "gap": 660.0
+        },
+        {
+          "date": "2025-07-14T00:00:00.000",
+          "tourney_name": "Los Cabos",
+          "surface": "Hard",
+          "winner_name": "Luis Carlos Alvarez",
+          "wr": 784.0,
+          "loser_name": "James Mccabe",
+          "lr": 164.0,
+          "score": "6-1 6-2",
+          "gap": 620.0
+        },
+        {
+          "date": "2025-02-01T00:00:00.000",
+          "tourney_name": "Davis Cup WG2 PO: JAM vs NZL",
+          "surface": "Hard",
+          "winner_name": "Blaise Bicknell",
+          "wr": 1078.0,
+          "loser_name": "Ajeet Rai",
+          "lr": 485.0,
+          "score": "6-3 6-4",
+          "gap": 593.0
+        },
+        {
+          "date": "2025-07-27T00:00:00.000",
+          "tourney_name": "Canada Masters",
+          "surface": "Hard",
+          "winner_name": "Nicolas Arseneault",
+          "wr": 638.0,
+          "loser_name": "Valentin Royer",
+          "lr": 111.0,
+          "score": "6-3 7-6(4)",
+          "gap": 527.0
+        },
+        {
+          "date": "2025-02-01T00:00:00.000",
+          "tourney_name": "Davis Cup WG1 PO: LUX vs LTU",
+          "surface": "Hard",
+          "winner_name": "Alex Knaff",
+          "wr": 718.0,
+          "loser_name": "Vilius Gaubas",
+          "lr": 192.0,
+          "score": "6-4 3-6 6-2",
+          "gap": 526.0
+        },
+        {
+          "date": "2025-04-14T00:00:00.000",
+          "tourney_name": "Munich",
+          "surface": "Clay",
+          "winner_name": "Diego Dedura Palomero",
+          "wr": 549.0,
+          "loser_name": "Denis Shapovalov",
+          "lr": 29.0,
+          "score": "7-6(2) 3-0 RET",
+          "gap": 520.0
+        },
+        {
+          "date": "2025-03-31T00:00:00.000",
+          "tourney_name": "Houston",
+          "surface": "Clay",
+          "winner_name": "Jenson Brooksby",
+          "wr": 507.0,
+          "loser_name": "Tommy Paul",
+          "lr": 13.0,
+          "score": "7-6(5) 3-6 7-6(6)",
+          "gap": 494.0
+        },
+        {
+          "date": "2025-03-31T00:00:00.000",
+          "tourney_name": "Houston",
+          "surface": "Clay",
+          "winner_name": "Jenson Brooksby",
+          "wr": 507.0,
+          "loser_name": "Frances Tiafoe",
+          "lr": 17.0,
+          "score": "6-4 6-2",
+          "gap": 490.0
+        },
+        {
+          "date": "2025-10-13T00:00:00.000",
+          "tourney_name": "Stockholm",
+          "surface": "Hard",
+          "winner_name": "Leo Borg",
+          "wr": 622.0,
+          "loser_name": "Sebastian Ofner",
+          "lr": 140.0,
+          "score": "6-3 6-4",
+          "gap": 482.0
+        },
+        {
+          "date": "2025-03-31T00:00:00.000",
+          "tourney_name": "Houston",
+          "surface": "Clay",
+          "winner_name": "Jenson Brooksby",
+          "wr": 507.0,
+          "loser_name": "Alejandro Tabilo",
+          "lr": 32.0,
+          "score": "3-6 6-4 7-6(6)",
+          "gap": 475.0
+        },
+        {
+          "date": "2025-09-12T00:00:00.000",
+          "tourney_name": "Davis Cup WG1 R1: SUI vs IND",
+          "surface": "Hard",
+          "winner_name": "Dhakshineswar Suresh",
+          "wr": 626.0,
+          "loser_name": "Jerome Kym",
+          "lr": 155.0,
+          "score": "7-6(5) 6-3",
+          "gap": 471.0
+        },
+        {
+          "date": "2025-07-20T00:00:00.000",
+          "tourney_name": "Umag",
+          "surface": "Clay",
+          "winner_name": "Pablo Llamas Ruiz",
+          "wr": 537.0,
+          "loser_name": "Kamil Majchrzak",
+          "lr": 78.0,
+          "score": "6-2 6-4",
+          "gap": 459.0
+        },
+        {
+          "date": "2025-09-12T00:00:00.000",
+          "tourney_name": "Davis Cup WG1 R1: KOR vs KAZ",
+          "surface": "Hard",
+          "winner_name": "Soon Woo Kwon",
+          "wr": 478.0,
+          "loser_name": "Alexander Bublik",
+          "lr": 19.0,
+          "score": "7-6(6) 3-0 RET",
+          "gap": 459.0
+        },
+        {
+          "date": "2025-06-30T00:00:00.000",
+          "tourney_name": "Wimbledon",
+          "surface": "Grass",
+          "winner_name": "Arthur Fery",
+          "wr": 461.0,
+          "loser_name": "Alexei Popyrin",
+          "lr": 22.0,
+          "score": "6-4 6-1 4-6 6-4",
+          "gap": 439.0
+        },
+        {
+          "date": "2025-03-31T00:00:00.000",
+          "tourney_name": "Houston",
+          "surface": "Clay",
+          "winner_name": "Jenson Brooksby",
+          "wr": 507.0,
+          "loser_name": "Aleksandar Kovacevic",
+          "lr": 79.0,
+          "score": "2-6 6-3 6-4",
+          "gap": 428.0
+        },
+        {
+          "date": "2025-08-25T00:00:00.000",
+          "tourney_name": "Us Open",
+          "surface": "Hard",
+          "winner_name": "Leandro Riedi",
+          "wr": 435.0,
+          "loser_name": "Francisco Cerundolo",
+          "lr": 19.0,
+          "score": "3-6 4-6 6-4 6-4 6-2",
+          "gap": 416.0
+        }
+      ]
+    },
+    "19_surface_specialists": [
+      {
+        "player": "Flavio Cobolli",
+        "surface": "Clay",
+        "matches": 19,
+        "actual": 14,
+        "expected": 8.6762622607,
+        "boost": 0.2801967231,
+        "group": "Clay over"
+      },
+      {
+        "player": "Carlos Alcaraz",
+        "surface": "Clay",
+        "matches": 23,
+        "actual": 22,
+        "expected": 16.2293911382,
+        "boost": 0.2508960375,
+        "group": "Clay over"
+      },
+      {
+        "player": "Alexander Bublik",
+        "surface": "Clay",
+        "matches": 21,
+        "actual": 16,
+        "expected": 10.7410972862,
+        "boost": 0.2504239388,
+        "group": "Clay over"
+      },
+      {
+        "player": "Jannik Sinner",
+        "surface": "Clay",
+        "matches": 13,
+        "actual": 11,
+        "expected": 8.000877325,
+        "boost": 0.2307017442,
+        "group": "Clay over"
+      },
+      {
+        "player": "Luciano Darderi",
+        "surface": "Clay",
+        "matches": 29,
+        "actual": 21,
+        "expected": 14.4146007443,
+        "boost": 0.227082733,
+        "group": "Clay over"
+      },
+      {
+        "player": "Alexei Popyrin",
+        "surface": "Clay",
+        "matches": 14,
+        "actual": 9,
+        "expected": 6.0137368866,
+        "boost": 0.2133045081,
+        "group": "Clay over"
+      },
+      {
+        "player": "Lorenzo Musetti",
+        "surface": "Clay",
+        "matches": 24,
+        "actual": 19,
+        "expected": 13.9023302612,
+        "boost": 0.2124029058,
+        "group": "Clay over"
+      },
+      {
+        "player": "Gabriel Diallo",
+        "surface": "Clay",
+        "matches": 10,
+        "actual": 6,
+        "expected": 4.1859200742,
+        "boost": 0.1814079926,
+        "group": "Clay over"
+      },
+      {
+        "player": "Arthur Cazaux",
+        "surface": "Clay",
+        "matches": 11,
+        "actual": 7,
+        "expected": 5.0589847553,
+        "boost": 0.1764559313,
+        "group": "Clay over"
+      },
+      {
+        "player": "Tommy Paul",
+        "surface": "Clay",
+        "matches": 16,
+        "actual": 12,
+        "expected": 9.3072563838,
+        "boost": 0.168296476,
+        "group": "Clay over"
+      },
+      {
+        "player": "Miomir Kecmanovic",
+        "surface": "Clay",
+        "matches": 8,
+        "actual": 2,
+        "expected": 4.1100836648,
+        "boost": -0.2637604581,
+        "group": "Clay under"
+      },
+      {
+        "player": "Dusan Lajovic",
+        "surface": "Clay",
+        "matches": 11,
+        "actual": 2,
+        "expected": 4.2444729079,
+        "boost": -0.2040429916,
+        "group": "Clay under"
+      },
+      {
+        "player": "Felix Auger Aliassime",
+        "surface": "Clay",
+        "matches": 8,
+        "actual": 3,
+        "expected": 4.6173737716,
+        "boost": -0.2021717214,
+        "group": "Clay under"
+      },
+      {
+        "player": "Hugo Gaston",
+        "surface": "Clay",
+        "matches": 13,
+        "actual": 3,
+        "expected": 5.548222663,
+        "boost": -0.1960171279,
+        "group": "Clay under"
+      },
+      {
+        "player": "Giovanni Mpetshi Perricard",
+        "surface": "Clay",
+        "matches": 8,
+        "actual": 2,
+        "expected": 3.4543908077,
+        "boost": -0.181798851,
+        "group": "Clay under"
+      },
+      {
+        "player": "Nicolas Jarry",
+        "surface": "Clay",
+        "matches": 14,
+        "actual": 3,
+        "expected": 5.4588165971,
+        "boost": -0.1756297569,
+        "group": "Clay under"
+      },
+      {
+        "player": "Chun Hsin Tseng",
+        "surface": "Clay",
+        "matches": 9,
+        "actual": 3,
+        "expected": 4.2067372083,
+        "boost": -0.134081912,
+        "group": "Clay under"
+      },
+      {
+        "player": "Stan Wawrinka",
+        "surface": "Clay",
+        "matches": 8,
+        "actual": 2,
+        "expected": 3.0266280144,
+        "boost": -0.1283285018,
+        "group": "Clay under"
+      },
+      {
+        "player": "Roberto Carballes Baena",
+        "surface": "Clay",
+        "matches": 11,
+        "actual": 4,
+        "expected": 5.2048699323,
+        "boost": -0.1095336302,
+        "group": "Clay under"
+      },
+      {
+        "player": "Jaime Faria",
+        "surface": "Clay",
+        "matches": 11,
+        "actual": 4,
+        "expected": 5.1974678136,
+        "boost": -0.1088607103,
+        "group": "Clay under"
+      },
+      {
+        "player": "Taylor Fritz",
+        "surface": "Grass",
+        "matches": 15,
+        "actual": 13,
+        "expected": 8.5554097289,
+        "boost": 0.2963060181,
+        "group": "Grass over"
+      },
+      {
+        "player": "Arthur Rinderknech",
+        "surface": "Grass",
+        "matches": 10,
+        "actual": 6,
+        "expected": 3.2454681999,
+        "boost": 0.27545318,
+        "group": "Grass over"
+      },
+      {
+        "player": "Lorenzo Sonego",
+        "surface": "Grass",
+        "matches": 9,
+        "actual": 5,
+        "expected": 3.3922138097,
+        "boost": 0.17864291,
+        "group": "Grass over"
+      },
+      {
+        "player": "Jiri Lehecka",
+        "surface": "Grass",
+        "matches": 10,
+        "actual": 7,
+        "expected": 5.3872504334,
+        "boost": 0.1612749567,
+        "group": "Grass over"
+      },
+      {
+        "player": "Karen Khachanov",
+        "surface": "Grass",
+        "matches": 11,
+        "actual": 8,
+        "expected": 6.2402063643,
+        "boost": 0.1599812396,
+        "group": "Grass over"
+      },
+      {
+        "player": "Roberto Bautista Agut",
+        "surface": "Grass",
+        "matches": 9,
+        "actual": 5,
+        "expected": 3.5768461958,
+        "boost": 0.1581282005,
+        "group": "Grass over"
+      },
+      {
+        "player": "Jannik Sinner",
+        "surface": "Grass",
+        "matches": 9,
+        "actual": 8,
+        "expected": 6.6043217906,
+        "boost": 0.1550753566,
+        "group": "Grass over"
+      },
+      {
+        "player": "Gabriel Diallo",
+        "surface": "Grass",
+        "matches": 12,
+        "actual": 9,
+        "expected": 7.2985980642,
+        "boost": 0.1417834947,
+        "group": "Grass over"
+      },
+      {
+        "player": "Daniel Evans",
+        "surface": "Grass",
+        "matches": 9,
+        "actual": 5,
+        "expected": 3.7708786815,
+        "boost": 0.1365690354,
+        "group": "Grass over"
+      },
+      {
+        "player": "Corentin Moutet",
+        "surface": "Grass",
+        "matches": 11,
+        "actual": 7,
+        "expected": 5.5077345483,
+        "boost": 0.1356604956,
+        "group": "Grass over"
+      },
+      {
+        "player": "Alexander Zverev",
+        "surface": "Grass",
+        "matches": 9,
+        "actual": 6,
+        "expected": 6.5330022564,
+        "boost": -0.0592224729,
+        "group": "Grass under"
+      },
+      {
+        "player": "Daniil Medvedev",
+        "surface": "Grass",
+        "matches": 8,
+        "actual": 5,
+        "expected": 4.9622137993,
+        "boost": 0.0047232751,
+        "group": "Grass under"
+      },
+      {
+        "player": "Ugo Humbert",
+        "surface": "Grass",
+        "matches": 8,
+        "actual": 4,
+        "expected": 3.9308644873,
+        "boost": 0.0086419391,
+        "group": "Grass under"
+      },
+      {
+        "player": "Zizou Bergs",
+        "surface": "Grass",
+        "matches": 8,
+        "actual": 4,
+        "expected": 3.9186293022,
+        "boost": 0.0101713372,
+        "group": "Grass under"
+      },
+      {
+        "player": "Nuno Borges",
+        "surface": "Grass",
+        "matches": 9,
+        "actual": 5,
+        "expected": 4.8838748145,
+        "boost": 0.0129027984,
+        "group": "Grass under"
+      },
+      {
+        "player": "Ben Shelton",
+        "surface": "Grass",
+        "matches": 10,
+        "actual": 6,
+        "expected": 5.8359358125,
+        "boost": 0.0164064187,
+        "group": "Grass under"
+      },
+      {
+        "player": "Carlos Alcaraz",
+        "surface": "Grass",
+        "matches": 12,
+        "actual": 11,
+        "expected": 10.6018419869,
+        "boost": 0.0331798344,
+        "group": "Grass under"
+      },
+      {
+        "player": "Felix Auger Aliassime",
+        "surface": "Grass",
+        "matches": 10,
+        "actual": 6,
+        "expected": 5.5886783393,
+        "boost": 0.0411321661,
+        "group": "Grass under"
+      },
+      {
+        "player": "Reilly Opelka",
+        "surface": "Grass",
+        "matches": 10,
+        "actual": 6,
+        "expected": 5.1790758265,
+        "boost": 0.0820924174,
+        "group": "Grass under"
+      },
+      {
+        "player": "Flavio Cobolli",
+        "surface": "Grass",
+        "matches": 9,
+        "actual": 6,
+        "expected": 5.1031194869,
+        "boost": 0.0996533903,
+        "group": "Grass under"
+      },
+      {
+        "player": "Valentin Vacherot",
+        "surface": "Hard",
+        "matches": 14,
+        "actual": 12,
+        "expected": 6.9288232955,
+        "boost": 0.3622269075,
+        "group": "Hard over"
+      },
+      {
+        "player": "Jack Draper",
+        "surface": "Hard",
+        "matches": 18,
+        "actual": 14,
+        "expected": 10.4776495903,
+        "boost": 0.1956861339,
+        "group": "Hard over"
+      },
+      {
+        "player": "Raphael Collignon",
+        "surface": "Hard",
+        "matches": 14,
+        "actual": 8,
+        "expected": 5.3239199963,
+        "boost": 0.1911485717,
+        "group": "Hard over"
+      },
+      {
+        "player": "Jannik Sinner",
+        "surface": "Hard",
+        "matches": 42,
+        "actual": 39,
+        "expected": 31.2874854507,
+        "boost": 0.1836312988,
+        "group": "Hard over"
+      },
+      {
+        "player": "Novak Djokovic",
+        "surface": "Hard",
+        "matches": 32,
+        "actual": 25,
+        "expected": 20.1563130862,
+        "boost": 0.1513652161,
+        "group": "Hard over"
+      },
+      {
+        "player": "Ugo Humbert",
+        "surface": "Hard",
+        "matches": 30,
+        "actual": 19,
+        "expected": 14.5085899498,
+        "boost": 0.1497136683,
+        "group": "Hard over"
+      },
+      {
+        "player": "Felix Auger Aliassime",
+        "surface": "Hard",
+        "matches": 57,
+        "actual": 42,
+        "expected": 33.6513187121,
+        "boost": 0.1464680928,
+        "group": "Hard over"
+      },
+      {
+        "player": "Grigor Dimitrov",
+        "surface": "Hard",
+        "matches": 17,
+        "actual": 10,
+        "expected": 7.7670433639,
+        "boost": 0.1313503904,
+        "group": "Hard over"
+      },
+      {
+        "player": "Learner Tien",
+        "surface": "Hard",
+        "matches": 46,
+        "actual": 31,
+        "expected": 25.2165664156,
+        "boost": 0.1257268171,
+        "group": "Hard over"
+      },
+      {
+        "player": "Denis Shapovalov",
+        "surface": "Hard",
+        "matches": 37,
+        "actual": 23,
+        "expected": 18.4756163374,
+        "boost": 0.1222806395,
+        "group": "Hard over"
+      },
+      {
+        "player": "Billy Harris",
+        "surface": "Hard",
+        "matches": 9,
+        "actual": 0,
+        "expected": 3.4515143353,
+        "boost": -0.3835015928,
+        "group": "Hard under"
+      },
+      {
+        "player": "Borna Coric",
+        "surface": "Hard",
+        "matches": 8,
+        "actual": 1,
+        "expected": 3.2133088919,
+        "boost": -0.2766636115,
+        "group": "Hard under"
+      },
+      {
+        "player": "Luciano Darderi",
+        "surface": "Hard",
+        "matches": 21,
+        "actual": 6,
+        "expected": 11.7731669276,
+        "boost": -0.2749127108,
+        "group": "Hard under"
+      },
+      {
+        "player": "Sebastian Baez",
+        "surface": "Hard",
+        "matches": 15,
+        "actual": 3,
+        "expected": 6.3392420784,
+        "boost": -0.2226161386,
+        "group": "Hard under"
+      },
+      {
+        "player": "Mariano Navone",
+        "surface": "Hard",
+        "matches": 16,
+        "actual": 5,
+        "expected": 7.6201477455,
+        "boost": -0.1637592341,
+        "group": "Hard under"
+      },
+      {
+        "player": "Roberto Bautista Agut",
+        "surface": "Hard",
+        "matches": 14,
+        "actual": 4,
+        "expected": 6.1657597844,
+        "boost": -0.1546971275,
+        "group": "Hard under"
+      },
+      {
+        "player": "Chun Hsin Tseng",
+        "surface": "Hard",
+        "matches": 8,
+        "actual": 2,
+        "expected": 3.2075539649,
+        "boost": -0.1509442456,
+        "group": "Hard under"
+      },
+      {
+        "player": "Zhizhen Zhang",
+        "surface": "Hard",
+        "matches": 17,
+        "actual": 5,
+        "expected": 7.4402569921,
+        "boost": -0.1435445289,
+        "group": "Hard under"
+      },
+      {
+        "player": "Ethan Quinn",
+        "surface": "Hard",
+        "matches": 18,
+        "actual": 6,
+        "expected": 8.2815832511,
+        "boost": -0.1267546251,
+        "group": "Hard under"
+      },
+      {
+        "player": "Pedro Martinez",
+        "surface": "Hard",
+        "matches": 20,
+        "actual": 7,
+        "expected": 9.5193580208,
+        "boost": -0.125967901,
+        "group": "Hard under"
+      }
+    ],
+    "20_matchups": {
+      "coefficients": [
+        {
+          "feature": "rank_adv",
+          "coef": -0.3349161462946042,
+          "odds_ratio_1sd": 0.7153980726167114
+        },
+        {
+          "feature": "points_adv",
+          "coef": 0.9393629408597635,
+          "odds_ratio_1sd": 2.558351078134589
+        },
+        {
+          "feature": "age_diff",
+          "coef": -0.10984213035483086,
+          "odds_ratio_1sd": 0.895975571477544
+        },
+        {
+          "feature": "ht_diff",
+          "coef": 0.06844771339762884,
+          "odds_ratio_1sd": 1.0708446326596597
+        },
+        {
+          "feature": "lefty_adv",
+          "coef": 0.009209286633823515,
+          "odds_ratio_1sd": 1.009251822588973
+        },
+        {
+          "feature": "lefty_Hard",
+          "coef": 0.07225023344638411,
+          "odds_ratio_1sd": 1.0749242924227678
+        },
+        {
+          "feature": "lefty_Clay",
+          "coef": -0.08364044831926232,
+          "odds_ratio_1sd": 0.9197618985865461
+        },
+        {
+          "feature": "lefty_Grass",
+          "coef": -0.013047253748785835,
+          "odds_ratio_1sd": 0.9870374926965618
+        }
+      ],
+      "close_rank_lefty_vs_righty": [
+        {
+          "surface": "Clay",
+          "matches": 24,
+          "lefty_win_rate": 0.4166666667
+        },
+        {
+          "surface": "Grass",
+          "matches": 8,
+          "lefty_win_rate": 0.625
+        },
+        {
+          "surface": "Hard",
+          "matches": 103,
+          "lefty_win_rate": 0.5533980583
+        }
+      ]
+    }
+  }
+}
