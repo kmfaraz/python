@@ -1,0 +1,49 @@
+name: Tennis ML Lab
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'tennis_ml_lab/part1.txt'
+      - 'tennis_ml_lab/part2.txt'
+      - 'tennis_ml_lab/part3.txt'
+      - 'tennis_ml_lab/requirements.txt'
+      - '.github/workflows/tennis-ml.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - name: Install dependencies
+        run: pip install -r tennis_ml_lab/requirements.txt
+      - name: Assemble analysis script
+        run: cat tennis_ml_lab/part1.txt tennis_ml_lab/part2.txt tennis_ml_lab/part3.txt > tennis_ml_lab/run_all.py
+      - name: Syntax check
+        run: python -m py_compile tennis_ml_lab/run_all.py
+      - name: Run all 20 analyses
+        run: python tennis_ml_lab/run_all.py
+      - name: Upload analysis results
+        uses: actions/upload-artifact@v4
+        with:
+          name: tennis-ml-results
+          path: tennis_ml_lab/results/
+      - name: Commit generated results
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add tennis_ml_lab/results tennis_ml_lab/run_all.py
+          if git diff --cached --quiet; then
+            echo "No result changes"
+          else
+            git commit -m "Generate ATP 2025 ML lab results"
+            git push
+          fi
